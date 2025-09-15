@@ -1,0 +1,452 @@
+[
+  {
+    "id": "job-1",
+    "title": "Senior Frontend Developer",
+    "slug": "senior-frontend-developer",
+    "description": "We're looking for a Senior Frontend Developer to join our Engineering team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Remote"
+    ],
+    "location": "San Francisco, CA",
+    "type": "Full-time",
+    "department": "Engineering",
+    "createdAt": "2024-01-09T10:09:00Z",
+    "updatedAt": "2024-01-09T10:09:00Z",
+    "order": 0
+  },
+  {
+    "id": "job-2",
+    "title": "Product Manager",
+    "slug": "product-manager",
+    "description": "We're looking for a Product Manager to join our Engineering team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Product",
+      "Strategy",
+      "B2B"
+    ],
+    "location": "San Francisco, CA",
+    "type": "Remote",
+    "department": "Engineering",
+    "createdAt": "2024-01-10T13:06:00Z",
+    "updatedAt": "2024-01-10T13:06:00Z",
+    "order": 1
+  },
+  {
+    "id": "job-3",
+    "title": "UX Designer",
+    "slug": "ux-designer",
+    "description": "We're looking for a UX Designer to join our Data team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Design",
+      "UX",
+      "Figma"
+    ],
+    "location": "Mumbai, MH",
+    "type": "Full-time",
+    "department": "Data",
+    "createdAt": "2024-01-11T08:02:00Z",
+    "updatedAt": "2024-01-11T08:02:00Z",
+    "order": 2
+  },
+  {
+    "id": "job-4",
+    "title": "Backend Engineer",
+    "slug": "backend-engineer",
+    "description": "We're looking for a Backend Engineer to join our Product team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Node.js",
+      "Python",
+      "AWS"
+    ],
+    "location": "Pune, MH",
+    "type": "Remote",
+    "department": "Product",
+    "createdAt": "2024-01-12T06:35:00Z",
+    "updatedAt": "2024-01-12T06:35:00Z",
+    "order": 3
+  },
+  {
+    "id": "job-5",
+    "title": "Data Scientist",
+    "slug": "data-scientist",
+    "description": "We're looking for a Data Scientist to join our Security team and help build impactful products.",
+    "status": "draft",
+    "tags": [
+      "Python",
+      "ML",
+      "Analytics"
+    ],
+    "location": "San Francisco, CA",
+    "type": "Remote",
+    "department": "Security",
+    "createdAt": "2024-01-13T08:40:00Z",
+    "updatedAt": "2024-01-13T08:40:00Z",
+    "order": 4
+  },
+  {
+    "id": "job-6",
+    "title": "Mobile Engineer",
+    "slug": "mobile-engineer",
+    "description": "We're looking for a Mobile Engineer to join our Design team and help build impactful products.",
+    "status": "paused",
+    "tags": [
+      "iOS",
+      "Swift",
+      "Mobile"
+    ],
+    "location": "San Francisco, CA",
+    "type": "Remote",
+    "department": "Design",
+    "createdAt": "2024-01-14T11:03:00Z",
+    "updatedAt": "2024-01-14T11:03:00Z",
+    "order": 5
+  },
+  {
+    "id": "job-7",
+    "title": "DevOps Engineer",
+    "slug": "devops-engineer",
+    "description": "We're looking for a DevOps Engineer to join our Operations team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "CI/CD",
+      "Docker",
+      "Kubernetes"
+    ],
+    "location": "New York, NY",
+    "type": "Remote",
+    "department": "Operations",
+    "createdAt": "2024-01-15T09:26:00Z",
+    "updatedAt": "2024-01-15T09:26:00Z",
+    "order": 6
+  },
+  {
+    "id": "job-8",
+    "title": "QA Engineer",
+    "slug": "qa-engineer",
+    "description": "We're looking for a QA Engineer to join our Security team and help build impactful products.",
+    "status": "draft",
+    "tags": [
+      "Testing",
+      "Selenium",
+      "Cypress"
+    ],
+    "location": "New York, NY",
+    "type": "Remote",
+    "department": "Security",
+    "createdAt": "2024-01-16T13:52:00Z",
+    "updatedAt": "2024-01-16T13:52:00Z",
+    "order": 7
+  },
+  {
+    "id": "job-9",
+    "title": "Engineering Manager",
+    "slug": "engineering-manager",
+    "description": "We're looking for a Engineering Manager to join our Security team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Leadership",
+      "Team Management",
+      "Hiring"
+    ],
+    "location": "Berlin, DE",
+    "type": "Full-time",
+    "department": "Security",
+    "createdAt": "2024-01-17T15:12:00Z",
+    "updatedAt": "2024-01-17T15:12:00Z",
+    "order": 8
+  },
+  {
+    "id": "job-10",
+    "title": "Technical Writer",
+    "slug": "technical-writer",
+    "description": "We're looking for a Technical Writer to join our Sales team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Docs",
+      "Technical Writing",
+      "API"
+    ],
+    "location": "Chicago, IL",
+    "type": "Remote",
+    "department": "Sales",
+    "createdAt": "2024-01-18T05:39:00Z",
+    "updatedAt": "2024-01-18T05:39:00Z",
+    "order": 9
+  },
+  {
+    "id": "job-11",
+    "title": "Full Stack Developer",
+    "slug": "full-stack-developer",
+    "description": "We're looking for a Full Stack Developer to join our Customer Success team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Full Stack",
+      "MERN",
+      "GraphQL"
+    ],
+    "location": "Delhi, IN",
+    "type": "Internship",
+    "department": "Customer Success",
+    "createdAt": "2024-01-19T17:20:00Z",
+    "updatedAt": "2024-01-19T17:20:00Z",
+    "order": 10
+  },
+  {
+    "id": "job-12",
+    "title": "ML Engineer",
+    "slug": "ml-engineer",
+    "description": "We're looking for a ML Engineer to join our Product team and help build impactful products.",
+    "status": "draft",
+    "tags": [
+      "ML Ops",
+      "TensorFlow",
+      "PyTorch"
+    ],
+    "location": "Los Angeles, CA",
+    "type": "Part-time",
+    "department": "Product",
+    "createdAt": "2024-01-20T09:15:00Z",
+    "updatedAt": "2024-01-20T09:15:00Z",
+    "order": 11
+  },
+  {
+    "id": "job-13",
+    "title": "Research Scientist",
+    "slug": "research-scientist",
+    "description": "We're looking for a Research Scientist to join our HR team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Research",
+      "NLP",
+      "CV"
+    ],
+    "location": "Delhi, IN",
+    "type": "Contract",
+    "department": "HR",
+    "createdAt": "2024-01-21T14:19:00Z",
+    "updatedAt": "2024-01-21T14:19:00Z",
+    "order": 12
+  },
+  {
+    "id": "job-14",
+    "title": "Security Engineer",
+    "slug": "security-engineer",
+    "description": "We're looking for a Security Engineer to join our Sales team and help build impactful products.",
+    "status": "paused",
+    "tags": [
+      "Security",
+      "Penetration Testing",
+      "Compliance"
+    ],
+    "location": "New York, NY",
+    "type": "Remote",
+    "department": "Sales",
+    "createdAt": "2024-01-22T09:38:00Z",
+    "updatedAt": "2024-01-22T09:38:00Z",
+    "order": 13
+  },
+  {
+    "id": "job-15",
+    "title": "Site Reliability Engineer",
+    "slug": "site-reliability-engineer",
+    "description": "We're looking for a Site Reliability Engineer to join our Sales team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "SRE",
+      "Monitoring",
+      "Prometheus"
+    ],
+    "location": "Delhi, IN",
+    "type": "Internship",
+    "department": "Sales",
+    "createdAt": "2024-01-23T07:48:00Z",
+    "updatedAt": "2024-01-23T07:48:00Z",
+    "order": 14
+  },
+  {
+    "id": "job-16",
+    "title": "Customer Success Manager",
+    "slug": "customer-success-manager",
+    "description": "We're looking for a Customer Success Manager to join our Customer Success team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Customer Success",
+      "Onboarding",
+      "Renewals"
+    ],
+    "location": "Berlin, DE",
+    "type": "Remote",
+    "department": "Customer Success",
+    "createdAt": "2024-01-24T05:42:00Z",
+    "updatedAt": "2024-01-24T05:42:00Z",
+    "order": 15
+  },
+  {
+    "id": "job-17",
+    "title": "Sales Engineer",
+    "slug": "sales-engineer",
+    "description": "We're looking for a Sales Engineer to join our HR team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Sales",
+      "Demo",
+      "Enterprise"
+    ],
+    "location": "London, UK",
+    "type": "Remote",
+    "department": "HR",
+    "createdAt": "2024-01-25T10:44:00Z",
+    "updatedAt": "2024-01-25T10:44:00Z",
+    "order": 16
+  },
+  {
+    "id": "job-18",
+    "title": "HR Generalist",
+    "slug": "hr-generalist",
+    "description": "We're looking for a HR Generalist to join our Product team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "HR",
+      "Recruiting",
+      "Benefits"
+    ],
+    "location": "Seattle, WA",
+    "type": "Internship",
+    "department": "Product",
+    "createdAt": "2024-01-26T06:53:00Z",
+    "updatedAt": "2024-01-26T06:53:00Z",
+    "order": 17
+  },
+  {
+    "id": "job-19",
+    "title": "Finance Analyst",
+    "slug": "finance-analyst",
+    "description": "We're looking for a Finance Analyst to join our HR team and help build impactful products.",
+    "status": "draft",
+    "tags": [
+      "Finance",
+      "Accounting",
+      "Budgeting"
+    ],
+    "location": "Chicago, IL",
+    "type": "Remote",
+    "department": "HR",
+    "createdAt": "2024-01-27T05:46:00Z",
+    "updatedAt": "2024-01-27T05:46:00Z",
+    "order": 18
+  },
+  {
+    "id": "job-20",
+    "title": "BI Engineer",
+    "slug": "bi-engineer",
+    "description": "We're looking for a BI Engineer to join our Engineering team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "BI",
+      "Looker",
+      "SQL"
+    ],
+    "location": "Chicago, IL",
+    "type": "Contract",
+    "department": "Engineering",
+    "createdAt": "2024-01-28T09:45:00Z",
+    "updatedAt": "2024-01-28T09:45:00Z",
+    "order": 19
+  },
+  {
+    "id": "job-21",
+    "title": "Design Lead",
+    "slug": "design-lead",
+    "description": "We're looking for a Design Lead to join our Engineering team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Design Systems",
+      "Product Design",
+      "Accessibility"
+    ],
+    "location": "New York, NY",
+    "type": "Internship",
+    "department": "Engineering",
+    "createdAt": "2024-01-29T12:22:00Z",
+    "updatedAt": "2024-01-29T12:22:00Z",
+    "order": 20
+  },
+  {
+    "id": "job-22",
+    "title": "Frontend Intern",
+    "slug": "frontend-intern",
+    "description": "We're looking for a Frontend Intern to join our Sales team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Internship",
+      "Learning",
+      "Mentorship"
+    ],
+    "location": "Los Angeles, CA",
+    "type": "Part-time",
+    "department": "Sales",
+    "createdAt": "2024-01-30T08:49:00Z",
+    "updatedAt": "2024-01-30T08:49:00Z",
+    "order": 21
+  },
+  {
+    "id": "job-23",
+    "title": "Backend Intern",
+    "slug": "backend-intern",
+    "description": "We're looking for a Backend Intern to join our HR team and help build impactful products.",
+    "status": "archived",
+    "tags": [
+      "Analytics",
+      "SQL",
+      "Tableau"
+    ],
+    "location": "New York, NY",
+    "type": "Part-time",
+    "department": "HR",
+    "createdAt": "2024-01-31T11:58:00Z",
+    "updatedAt": "2024-01-31T11:58:00Z",
+    "order": 22
+  },
+  {
+    "id": "job-24",
+    "title": "Product Analyst",
+    "slug": "product-analyst",
+    "description": "We're looking for a Product Analyst to join our Finance team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "Data Engineering",
+      "ETL",
+      "Spark"
+    ],
+    "location": "Remote",
+    "type": "Internship",
+    "department": "Finance",
+    "createdAt": "2024-02-01T11:35:00Z",
+    "updatedAt": "2024-02-01T11:35:00Z",
+    "order": 23
+  },
+  {
+    "id": "job-25",
+    "title": "Data Engineer",
+    "slug": "data-engineer",
+    "description": "We're looking for a Data Engineer to join our Data team and help build impactful products.",
+    "status": "active",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Remote"
+    ],
+    "location": "Bengaluru, KA",
+    "type": "Internship",
+    "department": "Data",
+    "createdAt": "2024-01-08T09:45:00Z",
+    "updatedAt": "2024-01-08T09:45:00Z",
+    "order": 24
+  }
+]

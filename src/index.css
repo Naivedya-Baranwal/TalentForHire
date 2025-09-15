@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TalentFlow HR - Modern Emerald/Teal Professional Theme */
+
+@layer components {
+  /* Fix for dialog centering issues */
+  [data-radix-dialog-content] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-50%) !important;
+    top: 50% !important;
+  }
+}
+
+@layer base {
+  :root {
+    /* Base colors - Clean and professional */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 12%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+
+    /* Primary brand colors - Modern Emerald/Teal */
+    --primary: 160 84% 39%;  /* Professional emerald */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 160 84% 35%;
+    --primary-light: 160 84% 85%;
+
+    /* Secondary colors - Soft complement */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 20% 25%;
+    --secondary-hover: 210 20% 90%;
+
+    /* Muted colors */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent colors - Warm coral for human touch */
+    --accent: 14 78% 92%;
+    --accent-foreground: 14 78% 25%;
+
+    /* Status colors - Carefully chosen for accessibility */
+    --success: 142 69% 40%;    /* Emerald green */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;     /* Warm amber */
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 75% 58%;  /* Coral red */
+    --destructive-foreground: 0 0% 100%;
+    --info: 199 89% 48%;       /* Ocean blue */
+    --info-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 210 20% 88%;
+    --input: 210 20% 95%;
+    --ring: 160 84% 39%;
+
+    /* Enhanced gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 20% 95%), hsl(210 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(14 78% 92%), hsl(14 78% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 45%), hsl(14 78% 60%));
+
+    /* Professional shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 12% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 12% / 0.12), 0 2px 4px -1px hsl(215 25% 12% / 0.08);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 12% / 0.12), 0 4px 6px -2px hsl(215 25% 12% / 0.06);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 12% / 0.12), 0 10px 10px -5px hsl(215 25% 12% / 0.05);
+
+    /* Smooth animations */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 95%;
+    --sidebar-accent-foreground: 215 25% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 160 84% 39%;
+  }
+
+  .dark {
+    /* Dark mode - Sophisticated and easy on the eyes */
+    --background: 215 28% 7%;
+    --foreground: 210 20% 92%;
+
+    /* Card colors */
+    --card: 215 25% 9%;
+    --card-foreground: 210 20% 92%;
+
+    /* Popover colors */
+    --popover: 215 25% 9%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Primary colors - Brighter emerald for dark mode */
+    --primary: 160 84% 50%;
+    --primary-foreground: 215 28% 7%;
+    --primary-hover: 160 84% 55%;
+    --primary-light: 160 40% 20%;
+
+    /* Secondary colors */
+    --secondary: 215 25% 12%;
+    --secondary-foreground: 210 20% 85%;
+    --secondary-hover: 215 25% 15%;
+
+    /* Muted colors */
+    --muted: 215 25% 11%;
+    --muted-foreground: 210 15% 65%;
+
+    /* Accent colors */
+    --accent: 14 40% 15%;
+    --accent-foreground: 14 78% 85%;
+
+    /* Status colors for dark mode */
+    --success: 142 69% 50%;
+    --success-foreground: 215 28% 7%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 215 28% 7%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --info: 199 89% 55%;
+    --info-foreground: 215 28% 7%;
+
+    /* UI elements */
+    --border: 215 25% 15%;
+    --input: 215 25% 12%;
+    --ring: 160 84% 50%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 50%), hsl(160 84% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(215 25% 12%), hsl(215 25% 9%));
+    --gradient-accent: linear-gradient(135deg, hsl(14 40% 15%), hsl(14 40% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(160 84% 50%), hsl(160 84% 55%), hsl(14 78% 40%));
+
+    /* Dark mode sidebar */
+    --sidebar-background: 215 25% 8%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 160 84% 50%;
+    --sidebar-primary-foreground: 215 28% 7%;
+    --sidebar-accent: 215 25% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 160 84% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Focus styles for better accessibility */
+  .focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
