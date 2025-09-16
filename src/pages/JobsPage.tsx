@@ -463,7 +463,6 @@ const JobsPage = () => {
                                 <p className="text-muted-foreground leading-relaxed mb-4">
                                   {job.description || 'No description provided.'}
                                 </p>
-
                                 <div className="flex flex-wrap gap-2 justify-center">
                                   {job.tags?.map((tag) => (
                                     <Badge 

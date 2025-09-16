@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ArrowLeft, Users, FileText, MapPin, Calendar, Building2, Eye } from 'lucide-react';
+import { ArrowLeft, Users, FileText, MapPin, Calendar, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -56,7 +56,6 @@ const JobDetailsPage = () => {
     );
   }
 
-  // Token-friendly badge and stripe colors (light + dark)
   const getStatusBadgeClass = (status: string) => {
     switch (status) {
       case 'active': return 'bg-success/15 text-success border-success/30';
@@ -122,12 +121,12 @@ const JobDetailsPage = () => {
                   </div>
                 </div>
 
-                {/* Primary CTA aligned with theme (icon-only on mobile, labeled on ≥sm) */}
+                {/* Primary CTA */}
                 <div className="flex sm:justify-end">
                   <Link to={`/assessments/${job.id}`} aria-label="Open assessment">
                     <Button
                       variant="outline"
-                      className="h-12 w-12 p-0 grid place-items-center rounded-full sm:h-12 sm:w-auto sm:px-4 sm:rounded-xl"
+                      className="h-12 w-12 place-items-center flex rounded-full sm:h-12 sm:w-auto sm:px-4 sm:rounded-xl"
                     >
                       <FileText className="h-4 w-4 sm:mr-2" />
                       <span className="hidden sm:inline">Assessment</span>
@@ -161,8 +160,8 @@ const JobDetailsPage = () => {
           {/* Details */}
           <TabsContent value="details" className="space-y-4 sm:space-y-6">
             <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
-              {/* Main */}
-              <div className="lg:col-span-2">
+              {/* Main: Description + Tags stacked */}
+              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
                 <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-base sm:text-lg">Description</CardTitle>
@@ -174,9 +173,26 @@ const JobDetailsPage = () => {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* Tags moved here, directly below Description */}
+                <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-base sm:text-lg">Tags</CardTitle>
+                    <CardDescription className="text-muted-foreground">Related skills and keywords</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {job.tags.map((tag: string) => (
+                        <Badge key={tag} variant="outline" className="text-xs rounded-full bg-muted/40 text-foreground border-border">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
 
-              {/* Sidebar */}
+              {/* Sidebar: Job Information only */}
               <div className="space-y-4 sm:space-y-6">
                 <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
                   <CardHeader>
@@ -199,22 +215,6 @@ const JobDetailsPage = () => {
                     <div>
                       <div className="text-xs sm:text-sm font-medium text-muted-foreground">Created</div>
                       <div className="text-sm sm:text-base text-foreground">{new Date(job.created_at).toLocaleDateString()}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">Tags</CardTitle>
-                    <CardDescription className="text-muted-foreground">Related skills and keywords</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      {job.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs rounded-full bg-muted/40 text-foreground border-border">
-                          {tag}
-                        </Badge>
-                      ))}
                     </div>
                   </CardContent>
                 </Card>
