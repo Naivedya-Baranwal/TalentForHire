@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Briefcase, Users, UserSquare2, Menu, X, LayoutDashboard } from 'lucide-react';
+import { Users, UserSquare2, Menu, X, LayoutDashboard,BriefcaseBusiness } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
@@ -16,7 +16,7 @@ const Navigation = () => {
     },
     { 
       to: '/jobs', 
-      icon: Briefcase, 
+      icon: BriefcaseBusiness, 
       label: 'Jobs',
       description: 'Manage job postings'
     },
