@@ -1,4 +1,4 @@
-# TALENTFLOW – A Mini Hiring Platform
+# TalentForHire – A Mini Hiring Platform
 
 A React-based application that allows an HR team to manage jobs, candidates, and assessments.  
 This project was implemented as part of the **React Technical Assignment**.
