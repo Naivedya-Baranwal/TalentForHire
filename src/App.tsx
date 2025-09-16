@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import JobsPage from './pages/JobsPage';
 import JobDetailsPage from './pages/JobDetailsPage';
 import CandidatesPage from './pages/CandidatesPage';
+import DashboardPage from './pages/DashboardPage';
 import CandidateDetailsPage from './pages/CandidateDetailsPage';
 import AssessmentBuilderPage from './pages/AssessmentBuilderPage';
 import NotFound from './pages/NotFound';
@@ -27,7 +28,9 @@ const App = () => (
             <Navigation />
             <main className="flex-1">
               <Routes>
-                <Route path="/" element={<Navigate to="/jobs" replace />} />
+                {/* <Route path="/" element={<Navigate to="/jobs" replace />} /> */}
+                <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/jobs" element={<JobsPage />} />
                 <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
                 <Route path="/candidates" element={<CandidatesPage />} />

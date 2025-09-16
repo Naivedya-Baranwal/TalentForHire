@@ -20,14 +20,11 @@ import {
   deleteAssessment
 } from '@/features/assessments/assessmentsThunks';
 import { 
-  setCurrentAssessment,
   selectCurrentAssessment,
   selectAssessmentsLoading,
   selectAssessmentsSaving,
   addSection,
   addQuestion,
-  updateSection,
-  updateQuestion,
   removeSection,
   removeQuestion,
   clearAssessment

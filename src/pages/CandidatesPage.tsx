@@ -226,14 +226,14 @@ const CandidatesPage: React.FC = () => {
               return (
                 <Card
                   key={candidate.id}
-                  className="sm:my-5 bg-card/90 backdrop-blur-sm border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden relative border-l-4"
+                  className="bg-card/90 backdrop-blur-sm border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden relative border-l-4"
                   style={getStageStripeStyle(candidate.stage)}
                 >
-                  <CardHeader className="p-4 sm:p-4">
+                  <CardHeader className="p-4 sm:p-6">
                     {/* Top right stage badge */}
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-3 min-w-0">
-                        <Avatar className="h-14 w-14 flex-shrink-0">
+                        <Avatar className="h-12 w-12 flex-shrink-0">
                           <AvatarImage
                             src={candidate.avatar}
                             alt={candidate.name}
@@ -338,6 +338,7 @@ const CandidatesPage: React.FC = () => {
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex justify-center">
+            {/* <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border"> */}
               <Pagination
                 currentPage={pagination.currentPage}
                 totalPages={totalPages}
@@ -348,6 +349,7 @@ const CandidatesPage: React.FC = () => {
                 totalItems={totalCandidates}
                 itemsPerPage={pagination.itemsPerPage}
               />
+            {/* </div> */}
           </div>
         )}
       </div>
