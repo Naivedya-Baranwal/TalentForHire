@@ -253,7 +253,6 @@ The application uses **Mock Service Worker (MSW)** for realistic API simulation:
 
 ##### Candidate Management
 - `GET /api/candidates` - List candidates with search and filters
-- `POST /api/candidates` - Create a new candidate
 - `PATCH /api/candidates/:id` - Update candidate information
 - `PATCH /api/candidates/:id/stage` - Update candidate stage with timeline
 - `POST /api/candidates/:id/notes` - Add notes to candidate profile
