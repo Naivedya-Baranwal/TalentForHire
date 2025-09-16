@@ -20,7 +20,7 @@
 - [Tech Stack](#-tech-stack)
 - [Getting Started](#-getting-started)
 - [Project Structure](#-project-structure)
-- [API Simulation](#-api-simulation)
+- [API Simulation Details](#-api-simulation)
 - [Data Management](#-data-management)
 - [Available Scripts](#-available-scripts)
 - [Contributing](#-contributing)
@@ -158,7 +158,8 @@ talentForHire/
 │   └── placeholder.svg
 ├── src/
 │   ├── components/         # Reusable UI components
-│   ├── pages/             # Route components
+│   ├── features/          # Thunks and slice for state management 
+|   ├── pages/             # Route components
 │   ├── hooks/             # Custom React hooks
 │   ├── lib/               # Utility functions
 │   ├── store/             # Redux store configuration
@@ -183,30 +184,30 @@ TalentForHire implements a sophisticated client-side architecture that simulates
 ### Architecture Diagram
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     React Frontend Application                      │
+│                     React Frontend Application              │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
-│  │ UI Components │  │ Redux Store │  │  React Query Cache  │ │
-│  │  (Shadcn/ui)  │  │   (State)   │  │   (Server State)   │ │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ UI Components │  │ Redux Store │  │  React Query Cache│  │
+│  │  (Shadcn/ui)  │  │   (State)   │  │   (Server State)  │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
-│                        HTTP Layer (Axios)                         │
+│                        HTTP Layer (Axios)                   │
 ├─────────────────────────────────────────────────────────────┤
-│                 Mock Service Worker (MSW) - INTERCEPTION         │
-│                    • Intercepts all HTTP requests                   │
-│                    • Simulates realistic API responses              │
-│                    • Artificial latency (200-1200ms)               │
-│                    • Error simulation (5-10% failure rate)         │
+│            Mock Service Worker (MSW) - INTERCEPTION         │
+│               • Intercepts all HTTP requests                │
+│               • Simulates realistic API responses           │
+│               • Artificial latency (200-1200ms)             │
+│               • Error simulation (5-10% failure rate)       │
 ├─────────────────────────────────────────────────────────────┤
-│                     Data Persistence Layer                          │
-│                                                                     │
-│    ┌────────────────────┐    ┌─────────────────────────┐    │
-│    │      Dexie.js       │    │        IndexedDB        │    │
-│    │  (ORM Wrapper)     │ ←→ │  (Browser Database)   │    │
-│    │  • Type Safety       │    │  • Large Storage      │    │
-│    │  • Promise-based    │    │  • Offline Support   │    │
-│    │  • Migration Support│    │  • Persistent Data   │    │
-│    └────────────────────┘    └─────────────────────────┘    │
+│                     Data Persistence Layer                  │
+│                                                             │
+│    ┌──────────────────── ┐   ┌─────────────────────────┐    │
+│    │      Dexie.js       │   │         IndexedDB       │    │
+│    │  (ORM Wrapper)      │←→ │  (Browser Database)     │    │
+│    │  • Type Safety      │   │   • Large Storage       │    │
+│    │  • Promise-based    │   │   • Offline Support     │    │
+│    │ • Migration Support │   │   • Persistent Data     │    │
+│    └──────────────────── ┘   └─────────────────────────┘    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -252,7 +253,6 @@ The application uses **Mock Service Worker (MSW)** for realistic API simulation:
 
 ##### Candidate Management
 - `GET /api/candidates` - List candidates with search and filters
-- `POST /api/candidates` - Create a new candidate
 - `PATCH /api/candidates/:id` - Update candidate information
 - `PATCH /api/candidates/:id/stage` - Update candidate stage with timeline
 - `POST /api/candidates/:id/notes` - Add notes to candidate profile
@@ -308,18 +308,18 @@ TalentForHire is built as a client-side application that simulates a full-stack 
 ### Architecture Diagram
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         Frontend (React)                     │
+│                         Frontend (React)                    │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
-│  │   UI Layer  │  │Redux Store  │  │  React Query      │ │
-│  │  (Shadcn)   │  │  (State)    │  │  (Server State)   │ │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │   UI Layer  │  │Redux Store  │  │  React Query        │  │
+│  │  (Shadcn)   │  │  (State)    │  │  (Server State)     │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
-│                    Mock Service Worker (MSW)                 │
-│                 Intercepts all API requests                  │
+│                    Mock Service Worker (MSW)                │
+│                 Intercepts all API requests                 │
 ├─────────────────────────────────────────────────────────────┤
-│                      IndexedDB (Dexie)                       │
-│                   Persistent Local Storage                   │
+│                      IndexedDB (Dexie)                      │
+│                   Persistent Local Storage                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
