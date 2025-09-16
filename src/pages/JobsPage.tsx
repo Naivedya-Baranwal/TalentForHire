@@ -242,7 +242,7 @@ const JobsPage = () => {
                   Create New Job
                 </Button>
               </DialogTrigger>
-              <DialogContent className="w-[95%] mx-4 md:mx-0 sm:max-w-[600px] rounded-xl bg-card text-foreground">
+              <DialogContent className="!ml-0  w-[95%] mx-4 md:mx-0 sm:max-w-[600px] rounded-xl bg-card text-foreground">
                 <form onSubmit={handleCreateJob}>
                   <DialogHeader>
                     <DialogTitle className="text-xl font-bold">Create New Job</DialogTitle>
