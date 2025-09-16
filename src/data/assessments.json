@@ -2,17 +2,319 @@
   {
     "id": "assessment-job-1-1",
     "job_id": "job-1",
-    "title": "Frontend Developer Assessment",
-    "description": "Technical assessment for Senior Frontend Developer position focusing on React, TypeScript, and modern web development practices.",
+    "title": "UI Developer Assessment",
+    "description": "Technical assessment for UI Developer position focusing on HTML, CSS, JavaScript, and user interface design principles.",
     "is_active": true,
     "created_at": "2024-01-15T10:00:00Z",
     "updated_at": "2024-01-15T10:00:00Z",
     "created_by": "system",
     "sections": [
       {
+        "id": "ui-section-1",
+        "title": "UI Development Skills",
+        "description": "Questions covering HTML, CSS, JavaScript, and UI design principles",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "Which CSS property is used to create flexible layouts?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "display: block", "value": "block", "is_correct": false},
+              {"id": "opt2", "text": "display: flex", "value": "flex", "is_correct": true},
+              {"id": "opt3", "text": "display: inline", "value": "inline", "is_correct": false},
+              {"id": "opt4", "text": "display: grid", "value": "grid", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are valid CSS units for responsive design? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "rem", "value": "rem", "is_correct": true},
+              {"id": "opt2", "text": "em", "value": "em", "is_correct": true},
+              {"id": "opt3", "text": "vh", "value": "vh", "is_correct": true},
+              {"id": "opt4", "text": "pixels", "value": "pixels", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What does the CSS box-sizing: border-box property do?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Includes padding and border in element's total width", "value": "includes_padding", "is_correct": true},
+              {"id": "opt2", "text": "Excludes padding from width calculation", "value": "excludes_padding", "is_correct": false},
+              {"id": "opt3", "text": "Changes the border style", "value": "border_style", "is_correct": false},
+              {"id": "opt4", "text": "Sets the box shadow", "value": "box_shadow", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which HTML element is semantic for main content?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "<div>", "value": "div", "is_correct": false},
+              {"id": "opt2", "text": "<main>", "value": "main", "is_correct": true},
+              {"id": "opt3", "text": "<section>", "value": "section", "is_correct": false},
+              {"id": "opt4", "text": "<content>", "value": "content", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are CSS Grid properties? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "grid-template-columns", "value": "grid_columns", "is_correct": true},
+              {"id": "opt2", "text": "grid-gap", "value": "grid_gap", "is_correct": true},
+              {"id": "opt3", "text": "flex-direction", "value": "flex_direction", "is_correct": false},
+              {"id": "opt4", "text": "justify-items", "value": "justify_items", "is_correct": true}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is the purpose of CSS media queries?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To create responsive designs", "value": "responsive", "is_correct": true},
+              {"id": "opt2", "text": "To add animations", "value": "animations", "is_correct": false},
+              {"id": "opt3", "text": "To import fonts", "value": "fonts", "is_correct": false},
+              {"id": "opt4", "text": "To minify CSS", "value": "minify", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "Which JavaScript method adds an event listener?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "addEvent()", "value": "add_event", "is_correct": false},
+              {"id": "opt2", "text": "addEventListener()", "value": "add_event_listener", "is_correct": true},
+              {"id": "opt3", "text": "attachEvent()", "value": "attach_event", "is_correct": false},
+              {"id": "opt4", "text": "onEvent()", "value": "on_event", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are valid ways to select elements in JavaScript? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "document.getElementById()", "value": "get_by_id", "is_correct": true},
+              {"id": "opt2", "text": "document.querySelector()", "value": "query_selector", "is_correct": true},
+              {"id": "opt3", "text": "document.getElementsByClassName()", "value": "get_by_class", "is_correct": true},
+              {"id": "opt4", "text": "document.findElement()", "value": "find_element", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What does CSS specificity determine?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Which styles are applied when multiple rules target the same element", "value": "style_priority", "is_correct": true},
+              {"id": "opt2", "text": "The loading order of CSS files", "value": "loading_order", "is_correct": false},
+              {"id": "opt3", "text": "The file size of CSS", "value": "file_size", "is_correct": false},
+              {"id": "opt4", "text": "The browser compatibility", "value": "compatibility", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "Which CSS property is used for creating smooth transitions?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "transition", "value": "transition", "is_correct": true},
+              {"id": "opt2", "text": "animation", "value": "animation", "is_correct": false},
+              {"id": "opt3", "text": "transform", "value": "transform", "is_correct": false},
+              {"id": "opt4", "text": "ease", "value": "ease", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-2-1",
+    "job_id": "job-2",
+    "title": "Senior Product Manager Assessment",
+    "description": "Assessment for Senior Product Manager position focusing on advanced product strategy, stakeholder management, and strategic planning.",
+    "is_active": true,
+    "created_at": "2024-01-14T09:00:00Z",
+    "updated_at": "2024-01-14T09:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "spm-section-1",
+        "title": "Senior Product Management Skills",
+        "description": "Questions covering advanced product strategy, metrics, and leadership",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "What is the primary goal of a product discovery process?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Validating product-market fit", "value": "product_market_fit", "is_correct": true},
+              {"id": "opt2", "text": "Increasing development speed", "value": "dev_speed", "is_correct": false},
+              {"id": "opt3", "text": "Reducing costs", "value": "reduce_costs", "is_correct": false},
+              {"id": "opt4", "text": "Improving code quality", "value": "code_quality", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are key components of OKRs (Objectives and Key Results)? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Objectives", "value": "objectives", "is_correct": true},
+              {"id": "opt2", "text": "Key Results", "value": "key_results", "is_correct": true},
+              {"id": "opt3", "text": "Timeline", "value": "timeline", "is_correct": true},
+              {"id": "opt4", "text": "Budget", "value": "budget", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What does NPS stand for in product management?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Net Promoter Score", "value": "net_promoter", "is_correct": true},
+              {"id": "opt2", "text": "New Product Strategy", "value": "new_product", "is_correct": false},
+              {"id": "opt3", "text": "Network Performance Score", "value": "network_performance", "is_correct": false},
+              {"id": "opt4", "text": "Next Phase Specification", "value": "next_phase", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which framework is used for prioritizing features based on impact and effort?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Impact/Effort Matrix", "value": "impact_effort", "is_correct": true},
+              {"id": "opt2", "text": "Kanban", "value": "kanban", "is_correct": false},
+              {"id": "opt3", "text": "Scrum", "value": "scrum", "is_correct": false},
+              {"id": "opt4", "text": "Waterfall", "value": "waterfall", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "What are key metrics for measuring product success? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Customer Acquisition Cost (CAC)", "value": "cac", "is_correct": true},
+              {"id": "opt2", "text": "Monthly Recurring Revenue (MRR)", "value": "mrr", "is_correct": true},
+              {"id": "opt3", "text": "Churn Rate", "value": "churn", "is_correct": true},
+              {"id": "opt4", "text": "Code Coverage", "value": "code_coverage", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is the Jobs-to-be-Done (JTBD) framework used for?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Understanding customer motivations and needs", "value": "customer_motivations", "is_correct": true},
+              {"id": "opt2", "text": "Managing development teams", "value": "dev_management", "is_correct": false},
+              {"id": "opt3", "text": "Planning sprints", "value": "sprint_planning", "is_correct": false},
+              {"id": "opt4", "text": "Testing features", "value": "feature_testing", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "What is a North Star Metric?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "A single metric that captures the core value delivered to customers", "value": "core_value_metric", "is_correct": true},
+              {"id": "opt2", "text": "The most expensive metric to track", "value": "expensive_metric", "is_correct": false},
+              {"id": "opt3", "text": "A security metric", "value": "security_metric", "is_correct": false},
+              {"id": "opt4", "text": "A database performance metric", "value": "db_metric", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are effective stakeholder management practices? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Regular stakeholder updates", "value": "regular_updates", "is_correct": true},
+              {"id": "opt2", "text": "Clear communication of trade-offs", "value": "trade_offs", "is_correct": true},
+              {"id": "opt3", "text": "Stakeholder mapping", "value": "stakeholder_mapping", "is_correct": true},
+              {"id": "opt4", "text": "Avoiding difficult conversations", "value": "avoid_conversations", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is the purpose of a product positioning statement?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To clearly define the product's unique value proposition", "value": "value_proposition", "is_correct": true},
+              {"id": "opt2", "text": "To document technical specifications", "value": "tech_specs", "is_correct": false},
+              {"id": "opt3", "text": "To track development progress", "value": "dev_progress", "is_correct": false},
+              {"id": "opt4", "text": "To manage team resources", "value": "team_resources", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "What is product-led growth (PLG)?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "A growth strategy where the product itself drives acquisition, activation, and retention", "value": "product_driven_growth", "is_correct": true},
+              {"id": "opt2", "text": "A development methodology", "value": "dev_methodology", "is_correct": false},
+              {"id": "opt3", "text": "A testing framework", "value": "testing_framework", "is_correct": false},
+              {"id": "opt4", "text": "A deployment strategy", "value": "deployment_strategy", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-3-1",
+    "job_id": "job-3",
+    "title": "Frontend Developer Assessment",
+    "description": "Assessment for Frontend Developer position focusing on React, Vue.js, JavaScript frameworks, and modern development practices.",
+    "is_active": true,
+    "created_at": "2024-01-13T08:00:00Z",
+    "updated_at": "2024-01-13T08:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
         "id": "frontend-section-1",
         "title": "Frontend Development Skills",
-        "description": "Questions covering React, TypeScript, and frontend best practices",
+        "description": "Questions covering React, Vue.js, JavaScript, and modern frontend tools",
         "order": 0,
         "required": true,
         "questions": [
@@ -32,23 +334,23 @@
           {
             "id": "q2",
             "type": "multiple_choice",
-            "title": "Which of the following are valid TypeScript types? (Select all that apply)",
+            "title": "Which are valid React lifecycle methods? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "string", "value": "string", "is_correct": true},
-              {"id": "opt2", "text": "number", "value": "number", "is_correct": true},
-              {"id": "opt3", "text": "boolean", "value": "boolean", "is_correct": true},
-              {"id": "opt4", "text": "integer", "value": "integer", "is_correct": false}
+              {"id": "opt1", "text": "componentDidMount", "value": "did_mount", "is_correct": true},
+              {"id": "opt2", "text": "componentWillUnmount", "value": "will_unmount", "is_correct": true},
+              {"id": "opt3", "text": "componentDidUpdate", "value": "did_update", "is_correct": true},
+              {"id": "opt4", "text": "componentDidRender", "value": "did_render", "is_correct": false}
             ],
             "order": 1
           },
           {
             "id": "q3",
             "type": "single_choice",
-            "title": "What is the virtual DOM in React?",
+            "title": "What is the Virtual DOM in React?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "A copy of the real DOM kept in memory", "value": "virtual_dom_memory", "is_correct": true},
+              {"id": "opt1", "text": "A lightweight copy of the real DOM kept in memory", "value": "virtual_dom_memory", "is_correct": true},
               {"id": "opt2", "text": "A new browser API", "value": "browser_api", "is_correct": false},
               {"id": "opt3", "text": "A CSS framework", "value": "css_framework", "is_correct": false},
               {"id": "opt4", "text": "A database technology", "value": "database", "is_correct": false}
@@ -58,65 +360,65 @@
           {
             "id": "q4",
             "type": "single_choice",
-            "title": "Which CSS property is used to create flexible layouts?",
+            "title": "Which Vue.js directive is used for two-way data binding?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "display: block", "value": "block", "is_correct": false},
-              {"id": "opt2", "text": "display: flex", "value": "flex", "is_correct": true},
-              {"id": "opt3", "text": "display: inline", "value": "inline", "is_correct": false},
-              {"id": "opt4", "text": "display: none", "value": "none", "is_correct": false}
+              {"id": "opt1", "text": "v-bind", "value": "v_bind", "is_correct": false},
+              {"id": "opt2", "text": "v-model", "value": "v_model", "is_correct": true},
+              {"id": "opt3", "text": "v-if", "value": "v_if", "is_correct": false},
+              {"id": "opt4", "text": "v-for", "value": "v_for", "is_correct": false}
             ],
             "order": 3
           },
           {
             "id": "q5",
             "type": "multiple_choice",
-            "title": "Which of these are React lifecycle methods? (Select all that apply)",
+            "title": "Which are JavaScript ES6+ features? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "componentDidMount", "value": "didMount", "is_correct": true},
-              {"id": "opt2", "text": "componentWillUnmount", "value": "willUnmount", "is_correct": true},
-              {"id": "opt3", "text": "componentDidRender", "value": "didRender", "is_correct": false},
-              {"id": "opt4", "text": "componentDidLoad", "value": "didLoad", "is_correct": false}
+              {"id": "opt1", "text": "Arrow functions", "value": "arrow_functions", "is_correct": true},
+              {"id": "opt2", "text": "Template literals", "value": "template_literals", "is_correct": true},
+              {"id": "opt3", "text": "Destructuring", "value": "destructuring", "is_correct": true},
+              {"id": "opt4", "text": "var declarations", "value": "var_declarations", "is_correct": false}
             ],
             "order": 4
           },
           {
             "id": "q6",
             "type": "single_choice",
-            "title": "What does JSX stand for?",
+            "title": "What is JSX in React?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "JavaScript XML", "value": "js_xml", "is_correct": true},
-              {"id": "opt2", "text": "Java Syntax Extension", "value": "java_syntax", "is_correct": false},
-              {"id": "opt3", "text": "JavaScript Extension", "value": "js_extension", "is_correct": false},
-              {"id": "opt4", "text": "JSON Syntax", "value": "json_syntax", "is_correct": false}
+              {"id": "opt1", "text": "A syntax extension for JavaScript", "value": "syntax_extension", "is_correct": true},
+              {"id": "opt2", "text": "A CSS preprocessor", "value": "css_preprocessor", "is_correct": false},
+              {"id": "opt3", "text": "A testing framework", "value": "testing_framework", "is_correct": false},
+              {"id": "opt4", "text": "A database query language", "value": "query_language", "is_correct": false}
             ],
             "order": 5
           },
           {
             "id": "q7",
             "type": "single_choice",
-            "title": "Which command is used to create a new React app?",
+            "title": "Which tool is commonly used for bundling React applications?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "npm create react-app", "value": "npm_create", "is_correct": false},
-              {"id": "opt2", "text": "npx create-react-app", "value": "npx_create", "is_correct": true},
-              {"id": "opt3", "text": "npm install react-app", "value": "npm_install", "is_correct": false},
-              {"id": "opt4", "text": "yarn create react", "value": "yarn_create", "is_correct": false}
+              {"id": "opt1", "text": "Webpack", "value": "webpack", "is_correct": true},
+              {"id": "opt2", "text": "Docker", "value": "docker", "is_correct": false},
+              {"id": "opt3", "text": "Jenkins", "value": "jenkins", "is_correct": false},
+              {"id": "opt4", "text": "MongoDB", "value": "mongodb", "is_correct": false}
             ],
             "order": 6
           },
           {
             "id": "q8",
             "type": "multiple_choice",
-            "title": "Which are valid ways to style React components? (Select all that apply)",
+            "title": "Which are state management libraries for React? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "CSS Modules", "value": "css_modules", "is_correct": true},
-              {"id": "opt2", "text": "Styled Components", "value": "styled_components", "is_correct": true},
-              {"id": "opt3", "text": "Inline Styles", "value": "inline_styles", "is_correct": true},
-              {"id": "opt4", "text": "PHP Styles", "value": "php_styles", "is_correct": false}
+              {"id": "opt1", "text": "Redux", "value": "redux", "is_correct": true},
+              {"id": "opt2", "text": "MobX", "value": "mobx", "is_correct": true},
+              {"id": "opt3", "text": "Zustand", "value": "zustand", "is_correct": true},
+              {"id": "opt4", "text": "Express", "value": "express", "is_correct": false}
             ],
             "order": 7
           },
@@ -126,8 +428,8 @@
             "title": "What is the purpose of useEffect in React?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "To manage component state", "value": "manage_state", "is_correct": false},
-              {"id": "opt2", "text": "To handle side effects", "value": "side_effects", "is_correct": true},
+              {"id": "opt1", "text": "To handle side effects and lifecycle events", "value": "side_effects", "is_correct": true},
+              {"id": "opt2", "text": "To manage component state", "value": "manage_state", "is_correct": false},
               {"id": "opt3", "text": "To create components", "value": "create_components", "is_correct": false},
               {"id": "opt4", "text": "To style components", "value": "style_components", "is_correct": false}
             ],
@@ -136,315 +438,13 @@
           {
             "id": "q10",
             "type": "single_choice",
-            "title": "Which tool is commonly used for bundling React applications?",
+            "title": "Which command creates a new React application?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Webpack", "value": "webpack", "is_correct": true},
-              {"id": "opt2", "text": "Docker", "value": "docker", "is_correct": false},
-              {"id": "opt3", "text": "Jenkins", "value": "jenkins", "is_correct": false},
-              {"id": "opt4", "text": "MySQL", "value": "mysql", "is_correct": false}
-            ],
-            "order": 9
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "assessment-job-2-1",
-    "job_id": "job-2",
-    "title": "Product Manager Assessment",
-    "description": "Assessment for Product Manager position focusing on product strategy, roadmap planning, and stakeholder management.",
-    "is_active": true,
-    "created_at": "2024-01-14T09:00:00Z",
-    "updated_at": "2024-01-14T09:00:00Z",
-    "created_by": "system",
-    "sections": [
-      {
-        "id": "pm-section-1",
-        "title": "Product Management Skills",
-        "description": "Questions covering product strategy, user research, and project management",
-        "order": 0,
-        "required": true,
-        "questions": [
-          {
-            "id": "q1",
-            "type": "single_choice",
-            "title": "What is the primary goal of user research in product development?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Understanding user needs and behaviors", "value": "user_needs", "is_correct": true},
-              {"id": "opt2", "text": "Increasing development speed", "value": "dev_speed", "is_correct": false},
-              {"id": "opt3", "text": "Reducing development costs", "value": "reduce_costs", "is_correct": false},
-              {"id": "opt4", "text": "Improving code quality", "value": "code_quality", "is_correct": false}
-            ],
-            "order": 0
-          },
-          {
-            "id": "q2",
-            "type": "multiple_choice",
-            "title": "Which are key components of a product roadmap? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Features and priorities", "value": "features", "is_correct": true},
-              {"id": "opt2", "text": "Timeline and milestones", "value": "timeline", "is_correct": true},
-              {"id": "opt3", "text": "Resource allocation", "value": "resources", "is_correct": true},
-              {"id": "opt4", "text": "Server configurations", "value": "servers", "is_correct": false}
-            ],
-            "order": 1
-          },
-          {
-            "id": "q3",
-            "type": "single_choice",
-            "title": "What does MVP stand for in product development?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Most Valuable Player", "value": "valuable_player", "is_correct": false},
-              {"id": "opt2", "text": "Minimum Viable Product", "value": "minimum_viable", "is_correct": true},
-              {"id": "opt3", "text": "Maximum Value Proposition", "value": "max_value", "is_correct": false},
-              {"id": "opt4", "text": "Most Versatile Platform", "value": "versatile_platform", "is_correct": false}
-            ],
-            "order": 2
-          },
-          {
-            "id": "q4",
-            "type": "single_choice",
-            "title": "Which framework is commonly used for prioritizing product features?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "RICE (Reach, Impact, Confidence, Effort)", "value": "rice", "is_correct": true},
-              {"id": "opt2", "text": "HTML", "value": "html", "is_correct": false},
-              {"id": "opt3", "text": "CSS", "value": "css", "is_correct": false},
-              {"id": "opt4", "text": "SQL", "value": "sql", "is_correct": false}
-            ],
-            "order": 3
-          },
-          {
-            "id": "q5",
-            "type": "multiple_choice",
-            "title": "What are key metrics for measuring product success? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "User engagement", "value": "engagement", "is_correct": true},
-              {"id": "opt2", "text": "Customer retention", "value": "retention", "is_correct": true},
-              {"id": "opt3", "text": "Revenue growth", "value": "revenue", "is_correct": true},
-              {"id": "opt4", "text": "Code complexity", "value": "complexity", "is_correct": false}
-            ],
-            "order": 4
-          },
-          {
-            "id": "q6",
-            "type": "single_choice",
-            "title": "What is A/B testing used for in product management?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Testing different versions of features", "value": "feature_testing", "is_correct": true},
-              {"id": "opt2", "text": "Testing server performance", "value": "server_testing", "is_correct": false},
-              {"id": "opt3", "text": "Testing database queries", "value": "db_testing", "is_correct": false},
-              {"id": "opt4", "text": "Testing code syntax", "value": "syntax_testing", "is_correct": false}
-            ],
-            "order": 5
-          },
-          {
-            "id": "q7",
-            "type": "single_choice",
-            "title": "What is a user persona in product development?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "A fictional character representing a user segment", "value": "user_character", "is_correct": true},
-              {"id": "opt2", "text": "A real user account", "value": "real_account", "is_correct": false},
-              {"id": "opt3", "text": "A security feature", "value": "security", "is_correct": false},
-              {"id": "opt4", "text": "A database schema", "value": "db_schema", "is_correct": false}
-            ],
-            "order": 6
-          },
-          {
-            "id": "q8",
-            "type": "multiple_choice",
-            "title": "Which are effective stakeholder management practices? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Regular communication", "value": "communication", "is_correct": true},
-              {"id": "opt2", "text": "Setting clear expectations", "value": "expectations", "is_correct": true},
-              {"id": "opt3", "text": "Gathering feedback", "value": "feedback", "is_correct": true},
-              {"id": "opt4", "text": "Avoiding meetings", "value": "avoid_meetings", "is_correct": false}
-            ],
-            "order": 7
-          },
-          {
-            "id": "q9",
-            "type": "single_choice",
-            "title": "What is the purpose of user stories in agile development?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "To describe features from user perspective", "value": "user_perspective", "is_correct": true},
-              {"id": "opt2", "text": "To document technical specifications", "value": "tech_specs", "is_correct": false},
-              {"id": "opt3", "text": "To track bug reports", "value": "bug_reports", "is_correct": false},
-              {"id": "opt4", "text": "To manage server logs", "value": "server_logs", "is_correct": false}
-            ],
-            "order": 8
-          },
-          {
-            "id": "q10",
-            "type": "single_choice",
-            "title": "What is product-market fit?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "When a product satisfies a strong market demand", "value": "market_demand", "is_correct": true},
-              {"id": "opt2", "text": "When a product is technically complete", "value": "technically_complete", "is_correct": false},
-              {"id": "opt3", "text": "When a product passes all tests", "value": "passes_tests", "is_correct": false},
-              {"id": "opt4", "text": "When a product is deployed", "value": "deployed", "is_correct": false}
-            ],
-            "order": 9
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "assessment-job-3-1",
-    "job_id": "job-3",
-    "title": "UX Designer Assessment",
-    "description": "Assessment for UX Designer position focusing on design principles, user research, and design tools.",
-    "is_active": true,
-    "created_at": "2024-01-13T08:00:00Z",
-    "updated_at": "2024-01-13T08:00:00Z",
-    "created_by": "system",
-    "sections": [
-      {
-        "id": "ux-section-1",
-        "title": "UX Design Skills",
-        "description": "Questions covering design thinking, user research, and design tools",
-        "order": 0,
-        "required": true,
-        "questions": [
-          {
-            "id": "q1",
-            "type": "single_choice",
-            "title": "What is the first phase of the design thinking process?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Empathize", "value": "empathize", "is_correct": true},
-              {"id": "opt2", "text": "Prototype", "value": "prototype", "is_correct": false},
-              {"id": "opt3", "text": "Test", "value": "test", "is_correct": false},
-              {"id": "opt4", "text": "Define", "value": "define", "is_correct": false}
-            ],
-            "order": 0
-          },
-          {
-            "id": "q2",
-            "type": "multiple_choice",
-            "title": "Which are common UX research methods? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "User interviews", "value": "interviews", "is_correct": true},
-              {"id": "opt2", "text": "Usability testing", "value": "usability_testing", "is_correct": true},
-              {"id": "opt3", "text": "Surveys", "value": "surveys", "is_correct": true},
-              {"id": "opt4", "text": "Database queries", "value": "db_queries", "is_correct": false}
-            ],
-            "order": 1
-          },
-          {
-            "id": "q3",
-            "type": "single_choice",
-            "title": "What does wireframing help with in UX design?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Planning layout and structure", "value": "layout_structure", "is_correct": true},
-              {"id": "opt2", "text": "Adding final colors", "value": "final_colors", "is_correct": false},
-              {"id": "opt3", "text": "Writing code", "value": "writing_code", "is_correct": false},
-              {"id": "opt4", "text": "Database design", "value": "db_design", "is_correct": false}
-            ],
-            "order": 2
-          },
-          {
-            "id": "q4",
-            "type": "single_choice",
-            "title": "Which tool is commonly used for UX/UI design?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Figma", "value": "figma", "is_correct": true},
-              {"id": "opt2", "text": "Excel", "value": "excel", "is_correct": false},
-              {"id": "opt3", "text": "MySQL", "value": "mysql", "is_correct": false},
-              {"id": "opt4", "text": "Jenkins", "value": "jenkins", "is_correct": false}
-            ],
-            "order": 3
-          },
-          {
-            "id": "q5",
-            "type": "multiple_choice",
-            "title": "What are key principles of good UX design? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Usability", "value": "usability", "is_correct": true},
-              {"id": "opt2", "text": "Accessibility", "value": "accessibility", "is_correct": true},
-              {"id": "opt3", "text": "Consistency", "value": "consistency", "is_correct": true},
-              {"id": "opt4", "text": "Complexity", "value": "complexity", "is_correct": false}
-            ],
-            "order": 4
-          },
-          {
-            "id": "q6",
-            "type": "single_choice",
-            "title": "What is a user journey map?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "A visualization of user experience over time", "value": "user_experience", "is_correct": true},
-              {"id": "opt2", "text": "A geographical map", "value": "geo_map", "is_correct": false},
-              {"id": "opt3", "text": "A database schema", "value": "db_schema", "is_correct": false},
-              {"id": "opt4", "text": "A server configuration", "value": "server_config", "is_correct": false}
-            ],
-            "order": 5
-          },
-          {
-            "id": "q7",
-            "type": "single_choice",
-            "title": "What does 'responsive design' mean?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Design that adapts to different screen sizes", "value": "screen_adaptation", "is_correct": true},
-              {"id": "opt2", "text": "Design that responds quickly", "value": "quick_response", "is_correct": false},
-              {"id": "opt3", "text": "Design that changes colors", "value": "color_change", "is_correct": false},
-              {"id": "opt4", "text": "Design that makes sounds", "value": "sound_design", "is_correct": false}
-            ],
-            "order": 6
-          },
-          {
-            "id": "q8",
-            "type": "multiple_choice",
-            "title": "Which are important accessibility considerations? (Select all that apply)",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "Color contrast", "value": "color_contrast", "is_correct": true},
-              {"id": "opt2", "text": "Alt text for images", "value": "alt_text", "is_correct": true},
-              {"id": "opt3", "text": "Keyboard navigation", "value": "keyboard_nav", "is_correct": true},
-              {"id": "opt4", "text": "Server uptime", "value": "server_uptime", "is_correct": false}
-            ],
-            "order": 7
-          },
-          {
-            "id": "q9",
-            "type": "single_choice",
-            "title": "What is the purpose of user personas in UX design?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "To represent target users and their goals", "value": "represent_users", "is_correct": true},
-              {"id": "opt2", "text": "To create user accounts", "value": "create_accounts", "is_correct": false},
-              {"id": "opt3", "text": "To manage databases", "value": "manage_db", "is_correct": false},
-              {"id": "opt4", "text": "To write code", "value": "write_code", "is_correct": false}
-            ],
-            "order": 8
-          },
-          {
-            "id": "q10",
-            "type": "single_choice",
-            "title": "What is information architecture in UX design?",
-            "required": true,
-            "options": [
-              {"id": "opt1", "text": "The structural design of shared information environments", "value": "structural_design", "is_correct": true},
-              {"id": "opt2", "text": "The physical architecture of buildings", "value": "building_architecture", "is_correct": false},
-              {"id": "opt3", "text": "The design of computer hardware", "value": "hardware_design", "is_correct": false},
-              {"id": "opt4", "text": "The structure of databases", "value": "db_structure", "is_correct": false}
+              {"id": "opt1", "text": "npx create-react-app", "value": "create_react_app", "is_correct": true},
+              {"id": "opt2", "text": "npm init react", "value": "npm_init", "is_correct": false},
+              {"id": "opt3", "text": "yarn create vue", "value": "yarn_vue", "is_correct": false},
+              {"id": "opt4", "text": "npm install react", "value": "npm_install", "is_correct": false}
             ],
             "order": 9
           }
@@ -455,147 +455,147 @@
   {
     "id": "assessment-job-4-1",
     "job_id": "job-4",
-    "title": "Backend Engineer Assessment",
-    "description": "Assessment for Backend Engineer position focusing on server-side technologies, databases, and system design.",
+    "title": "Senior Backend Engineer Assessment",
+    "description": "Assessment for Senior Backend Engineer position focusing on advanced server-side technologies, microservices architecture, and system design.",
     "is_active": true,
     "created_at": "2024-01-12T07:00:00Z",
     "updated_at": "2024-01-12T07:00:00Z",
     "created_by": "system",
     "sections": [
       {
-        "id": "backend-section-1",
-        "title": "Backend Development Skills",
-        "description": "Questions covering Node.js, Python, databases, and system architecture",
+        "id": "senior-backend-section-1",
+        "title": "Senior Backend Development Skills",
+        "description": "Questions covering advanced Node.js, Python, microservices, and system architecture",
         "order": 0,
         "required": true,
         "questions": [
           {
             "id": "q1",
             "type": "single_choice",
-            "title": "Which HTTP method is typically used to retrieve data?",
+            "title": "Which pattern is commonly used in microservices architecture for service communication?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "GET", "value": "get", "is_correct": true},
-              {"id": "opt2", "text": "POST", "value": "post", "is_correct": false},
-              {"id": "opt3", "text": "DELETE", "value": "delete", "is_correct": false},
-              {"id": "opt4", "text": "UPDATE", "value": "update", "is_correct": false}
+              {"id": "opt1", "text": "Event-driven architecture", "value": "event_driven", "is_correct": true},
+              {"id": "opt2", "text": "Direct database access", "value": "direct_db", "is_correct": false},
+              {"id": "opt3", "text": "Shared memory", "value": "shared_memory", "is_correct": false},
+              {"id": "opt4", "text": "File system communication", "value": "file_system", "is_correct": false}
             ],
             "order": 0
           },
           {
             "id": "q2",
             "type": "multiple_choice",
-            "title": "Which are popular backend frameworks? (Select all that apply)",
+            "title": "Which are benefits of using microservices? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Express.js", "value": "express", "is_correct": true},
-              {"id": "opt2", "text": "Django", "value": "django", "is_correct": true},
-              {"id": "opt3", "text": "Flask", "value": "flask", "is_correct": true},
-              {"id": "opt4", "text": "Photoshop", "value": "photoshop", "is_correct": false}
+              {"id": "opt1", "text": "Independent deployment", "value": "independent_deployment", "is_correct": true},
+              {"id": "opt2", "text": "Technology diversity", "value": "tech_diversity", "is_correct": true},
+              {"id": "opt3", "text": "Fault isolation", "value": "fault_isolation", "is_correct": true},
+              {"id": "opt4", "text": "Simplified debugging", "value": "simple_debugging", "is_correct": false}
             ],
             "order": 1
           },
           {
             "id": "q3",
             "type": "single_choice",
-            "title": "What does REST stand for in web services?",
+            "title": "What is the CAP theorem in distributed systems?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Representational State Transfer", "value": "representational", "is_correct": true},
-              {"id": "opt2", "text": "Remote System Testing", "value": "remote_testing", "is_correct": false},
-              {"id": "opt3", "text": "Rapid Software Technology", "value": "rapid_software", "is_correct": false},
-              {"id": "opt4", "text": "Relational State Transactions", "value": "relational_state", "is_correct": false}
+              {"id": "opt1", "text": "Consistency, Availability, Partition tolerance - pick two", "value": "cap_theorem", "is_correct": true},
+              {"id": "opt2", "text": "Create, Access, Process data", "value": "create_access", "is_correct": false},
+              {"id": "opt3", "text": "Cache, API, Performance", "value": "cache_api", "is_correct": false},
+              {"id": "opt4", "text": "Concurrent, Asynchronous, Parallel", "value": "concurrent_async", "is_correct": false}
             ],
             "order": 2
           },
           {
             "id": "q4",
             "type": "single_choice",
-            "title": "Which database type is MongoDB?",
+            "title": "Which database type is best for ACID transactions?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "NoSQL/Document database", "value": "nosql", "is_correct": true},
-              {"id": "opt2", "text": "Relational database", "value": "relational", "is_correct": false},
-              {"id": "opt3", "text": "Graph database", "value": "graph", "is_correct": false},
-              {"id": "opt4", "text": "Key-value store", "value": "key_value", "is_correct": false}
+              {"id": "opt1", "text": "Relational databases (SQL)", "value": "sql_database", "is_correct": true},
+              {"id": "opt2", "text": "NoSQL databases", "value": "nosql_database", "is_correct": false},
+              {"id": "opt3", "text": "Graph databases", "value": "graph_database", "is_correct": false},
+              {"id": "opt4", "text": "Key-value stores", "value": "key_value", "is_correct": false}
             ],
             "order": 3
           },
           {
             "id": "q5",
             "type": "multiple_choice",
-            "title": "Which are common HTTP status codes? (Select all that apply)",
+            "title": "Which are common caching strategies? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "200 (OK)", "value": "200", "is_correct": true},
-              {"id": "opt2", "text": "404 (Not Found)", "value": "404", "is_correct": true},
-              {"id": "opt3", "text": "500 (Internal Server Error)", "value": "500", "is_correct": true},
-              {"id": "opt4", "text": "999 (Unknown)", "value": "999", "is_correct": false}
+              {"id": "opt1", "text": "Cache-aside", "value": "cache_aside", "is_correct": true},
+              {"id": "opt2", "text": "Write-through", "value": "write_through", "is_correct": true},
+              {"id": "opt3", "text": "Write-behind", "value": "write_behind", "is_correct": true},
+              {"id": "opt4", "text": "Cache-forward", "value": "cache_forward", "is_correct": false}
             ],
             "order": 4
           },
           {
             "id": "q6",
             "type": "single_choice",
-            "title": "What is the purpose of middleware in web applications?",
+            "title": "What is the purpose of an API Gateway in microservices?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "To process requests between client and server", "value": "process_requests", "is_correct": true},
-              {"id": "opt2", "text": "To style web pages", "value": "style_pages", "is_correct": false},
-              {"id": "opt3", "text": "To create databases", "value": "create_db", "is_correct": false},
-              {"id": "opt4", "text": "To design user interfaces", "value": "design_ui", "is_correct": false}
+              {"id": "opt1", "text": "Single entry point for client requests and cross-cutting concerns", "value": "single_entry", "is_correct": true},
+              {"id": "opt2", "text": "Database connection pooling", "value": "db_pooling", "is_correct": false},
+              {"id": "opt3", "text": "Code compilation", "value": "code_compilation", "is_correct": false},
+              {"id": "opt4", "text": "User interface rendering", "value": "ui_rendering", "is_correct": false}
             ],
             "order": 5
           },
           {
             "id": "q7",
             "type": "single_choice",
-            "title": "What does API stand for?",
+            "title": "What does eventual consistency mean in distributed systems?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Application Programming Interface", "value": "programming_interface", "is_correct": true},
-              {"id": "opt2", "text": "Automated Program Integration", "value": "automated_integration", "is_correct": false},
-              {"id": "opt3", "text": "Advanced Processing Intelligence", "value": "advanced_processing", "is_correct": false},
-              {"id": "opt4", "text": "Application Process Identifier", "value": "process_identifier", "is_correct": false}
+              {"id": "opt1", "text": "The system will become consistent over time if no new updates are made", "value": "eventual_consistency", "is_correct": true},
+              {"id": "opt2", "text": "The system is always consistent", "value": "always_consistent", "is_correct": false},
+              {"id": "opt3", "text": "The system never becomes consistent", "value": "never_consistent", "is_correct": false},
+              {"id": "opt4", "text": "Consistency is checked manually", "value": "manual_consistency", "is_correct": false}
             ],
             "order": 6
           },
           {
             "id": "q8",
             "type": "multiple_choice",
-            "title": "Which are benefits of using a load balancer? (Select all that apply)",
+            "title": "Which are benefits of using message queues? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Distributes traffic across servers", "value": "distribute_traffic", "is_correct": true},
-              {"id": "opt2", "text": "Improves availability", "value": "improve_availability", "is_correct": true},
-              {"id": "opt3", "text": "Prevents single point of failure", "value": "prevent_failure", "is_correct": true},
-              {"id": "opt4", "text": "Designs user interfaces", "value": "design_ui", "is_correct": false}
+              {"id": "opt1", "text": "Asynchronous processing", "value": "async_processing", "is_correct": true},
+              {"id": "opt2", "text": "Load leveling", "value": "load_leveling", "is_correct": true},
+              {"id": "opt3", "text": "Decoupling services", "value": "decoupling", "is_correct": true},
+              {"id": "opt4", "text": "Immediate consistency", "value": "immediate_consistency", "is_correct": false}
             ],
             "order": 7
           },
           {
             "id": "q9",
             "type": "single_choice",
-            "title": "What is the primary purpose of database indexing?",
+            "title": "What is the purpose of database sharding?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "To improve query performance", "value": "query_performance", "is_correct": true},
-              {"id": "opt2", "text": "To increase storage space", "value": "increase_storage", "is_correct": false},
-              {"id": "opt3", "text": "To encrypt data", "value": "encrypt_data", "is_correct": false},
-              {"id": "opt4", "text": "To backup data", "value": "backup_data", "is_correct": false}
+              {"id": "opt1", "text": "Horizontally partition data across multiple databases", "value": "horizontal_partition", "is_correct": true},
+              {"id": "opt2", "text": "Encrypt database content", "value": "encrypt_db", "is_correct": false},
+              {"id": "opt3", "text": "Backup database data", "value": "backup_db", "is_correct": false},
+              {"id": "opt4", "text": "Compress database files", "value": "compress_db", "is_correct": false}
             ],
             "order": 8
           },
           {
             "id": "q10",
             "type": "single_choice",
-            "title": "What does CORS stand for in web development?",
+            "title": "What does idempotency mean in API design?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Cross-Origin Resource Sharing", "value": "cross_origin", "is_correct": true},
-              {"id": "opt2", "text": "Centralized Object Resource System", "value": "centralized_object", "is_correct": false},
-              {"id": "opt3", "text": "Cached Online Resource Storage", "value": "cached_resource", "is_correct": false},
-              {"id": "opt4", "text": "Concurrent Operations Resource Sync", "value": "concurrent_operations", "is_correct": false}
+              {"id": "opt1", "text": "Multiple identical requests have the same effect as a single request", "value": "idempotent_requests", "is_correct": true},
+              {"id": "opt2", "text": "Requests are processed in order", "value": "ordered_requests", "is_correct": false},
+              {"id": "opt3", "text": "Requests are encrypted", "value": "encrypted_requests", "is_correct": false},
+              {"id": "opt4", "text": "Requests are logged", "value": "logged_requests", "is_correct": false}
             ],
             "order": 9
           }
@@ -606,147 +606,902 @@
   {
     "id": "assessment-job-5-1",
     "job_id": "job-5",
-    "title": "Data Scientist Assessment",
-    "description": "Assessment for Data Scientist position focusing on Python, machine learning, analytics, and statistical analysis.",
+    "title": "Junior Data Analyst Assessment",
+    "description": "Assessment for Junior Data Analyst position focusing on SQL, Excel, basic analytics, and data interpretation skills.",
     "is_active": true,
     "created_at": "2024-01-11T06:00:00Z",
     "updated_at": "2024-01-11T06:00:00Z",
     "created_by": "system",
     "sections": [
       {
-        "id": "ds-section-1",
-        "title": "Data Science Skills",
-        "description": "Questions covering Python, machine learning, statistics, and data analysis",
+        "id": "jda-section-1",
+        "title": "Data Analysis Skills",
+        "description": "Questions covering SQL, Excel, basic statistics, and data interpretation",
         "order": 0,
         "required": true,
         "questions": [
           {
             "id": "q1",
             "type": "single_choice",
-            "title": "Which Python library is commonly used for data manipulation?",
+            "title": "Which SQL clause is used to filter rows in a query?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "pandas", "value": "pandas", "is_correct": true},
-              {"id": "opt2", "text": "pygame", "value": "pygame", "is_correct": false},
-              {"id": "opt3", "text": "tkinter", "value": "tkinter", "is_correct": false},
-              {"id": "opt4", "text": "flask", "value": "flask", "is_correct": false}
+              {"id": "opt1", "text": "WHERE", "value": "where", "is_correct": true},
+              {"id": "opt2", "text": "SELECT", "value": "select", "is_correct": false},
+              {"id": "opt3", "text": "FROM", "value": "from", "is_correct": false},
+              {"id": "opt4", "text": "ORDER BY", "value": "order_by", "is_correct": false}
             ],
             "order": 0
           },
           {
             "id": "q2",
             "type": "multiple_choice",
-            "title": "Which are supervised learning algorithms? (Select all that apply)",
+            "title": "Which are common SQL aggregate functions? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Linear Regression", "value": "linear_regression", "is_correct": true},
-              {"id": "opt2", "text": "Decision Trees", "value": "decision_trees", "is_correct": true},
-              {"id": "opt3", "text": "Random Forest", "value": "random_forest", "is_correct": true},
-              {"id": "opt4", "text": "K-means Clustering", "value": "kmeans", "is_correct": false}
+              {"id": "opt1", "text": "COUNT", "value": "count", "is_correct": true},
+              {"id": "opt2", "text": "SUM", "value": "sum", "is_correct": true},
+              {"id": "opt3", "text": "AVG", "value": "avg", "is_correct": true},
+              {"id": "opt4", "text": "CONCAT", "value": "concat", "is_correct": false}
             ],
             "order": 1
           },
           {
             "id": "q3",
             "type": "single_choice",
-            "title": "What does SQL stand for?",
+            "title": "What does a pivot table in Excel help you do?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Structured Query Language", "value": "structured_query", "is_correct": true},
-              {"id": "opt2", "text": "Simple Question Logic", "value": "simple_question", "is_correct": false},
-              {"id": "opt3", "text": "System Quality Language", "value": "system_quality", "is_correct": false},
-              {"id": "opt4", "text": "Standard Query Library", "value": "standard_query", "is_correct": false}
+              {"id": "opt1", "text": "Summarize and analyze large datasets", "value": "summarize_data", "is_correct": true},
+              {"id": "opt2", "text": "Create charts only", "value": "create_charts", "is_correct": false},
+              {"id": "opt3", "text": "Format cells", "value": "format_cells", "is_correct": false},
+              {"id": "opt4", "text": "Print documents", "value": "print_docs", "is_correct": false}
             ],
             "order": 2
           },
           {
             "id": "q4",
             "type": "single_choice",
-            "title": "Which measure is used to evaluate classification model accuracy?",
+            "title": "What is the median of the dataset: 2, 4, 6, 8, 10?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Confusion Matrix", "value": "confusion_matrix", "is_correct": true},
-              {"id": "opt2", "text": "Correlation Coefficient", "value": "correlation", "is_correct": false},
-              {"id": "opt3", "text": "Standard Deviation", "value": "std_dev", "is_correct": false},
-              {"id": "opt4", "text": "Median Value", "value": "median", "is_correct": false}
+              {"id": "opt1", "text": "6", "value": "six", "is_correct": true},
+              {"id": "opt2", "text": "5", "value": "five", "is_correct": false},
+              {"id": "opt3", "text": "8", "value": "eight", "is_correct": false},
+              {"id": "opt4", "text": "4", "value": "four", "is_correct": false}
             ],
             "order": 3
           },
           {
             "id": "q5",
             "type": "multiple_choice",
-            "title": "Which are common data visualization libraries in Python? (Select all that apply)",
+            "title": "Which are measures of central tendency? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "matplotlib", "value": "matplotlib", "is_correct": true},
-              {"id": "opt2", "text": "seaborn", "value": "seaborn", "is_correct": true},
-              {"id": "opt3", "text": "plotly", "value": "plotly", "is_correct": true},
-              {"id": "opt4", "text": "requests", "value": "requests", "is_correct": false}
+              {"id": "opt1", "text": "Mean", "value": "mean", "is_correct": true},
+              {"id": "opt2", "text": "Median", "value": "median", "is_correct": true},
+              {"id": "opt3", "text": "Mode", "value": "mode", "is_correct": true},
+              {"id": "opt4", "text": "Range", "value": "range", "is_correct": false}
             ],
             "order": 4
           },
           {
             "id": "q6",
             "type": "single_choice",
-            "title": "What is overfitting in machine learning?",
+            "title": "What is the purpose of data visualization?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Model performs well on training but poorly on test data", "value": "training_test", "is_correct": true},
-              {"id": "opt2", "text": "Model has too few parameters", "value": "few_parameters", "is_correct": false},
-              {"id": "opt3", "text": "Model trains too quickly", "value": "trains_quickly", "is_correct": false},
-              {"id": "opt4", "text": "Model uses too much memory", "value": "too_much_memory", "is_correct": false}
+              {"id": "opt1", "text": "To make data easier to understand and identify patterns", "value": "understand_patterns", "is_correct": true},
+              {"id": "opt2", "text": "To make data look complex", "value": "complex_data", "is_correct": false},
+              {"id": "opt3", "text": "To hide data trends", "value": "hide_trends", "is_correct": false},
+              {"id": "opt4", "text": "To increase file size", "value": "increase_size", "is_correct": false}
             ],
             "order": 5
           },
           {
             "id": "q7",
             "type": "single_choice",
-            "title": "What is the purpose of cross-validation?",
+            "title": "Which Excel function would you use to find the maximum value in a range?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "To assess model performance on unseen data", "value": "assess_performance", "is_correct": true},
-              {"id": "opt2", "text": "To clean the data", "value": "clean_data", "is_correct": false},
-              {"id": "opt3", "text": "To visualize data", "value": "visualize_data", "is_correct": false},
-              {"id": "opt4", "text": "To store data", "value": "store_data", "is_correct": false}
+              {"id": "opt1", "text": "MAX()", "value": "max_function", "is_correct": true},
+              {"id": "opt2", "text": "MIN()", "value": "min_function", "is_correct": false},
+              {"id": "opt3", "text": "SUM()", "value": "sum_function", "is_correct": false},
+              {"id": "opt4", "text": "COUNT()", "value": "count_function", "is_correct": false}
             ],
             "order": 6
           },
           {
             "id": "q8",
             "type": "multiple_choice",
-            "title": "Which are steps in the data science process? (Select all that apply)",
+            "title": "Which are types of data visualization charts? (Select all that apply)",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "Data collection", "value": "data_collection", "is_correct": true},
-              {"id": "opt2", "text": "Data cleaning", "value": "data_cleaning", "is_correct": true},
-              {"id": "opt3", "text": "Model building", "value": "model_building", "is_correct": true},
-              {"id": "opt4", "text": "Website design", "value": "website_design", "is_correct": false}
+              {"id": "opt1", "text": "Bar chart", "value": "bar_chart", "is_correct": true},
+              {"id": "opt2", "text": "Line graph", "value": "line_graph", "is_correct": true},
+              {"id": "opt3", "text": "Pie chart", "value": "pie_chart", "is_correct": true},
+              {"id": "opt4", "text": "Database schema", "value": "db_schema", "is_correct": false}
             ],
             "order": 7
           },
           {
             "id": "q9",
             "type": "single_choice",
-            "title": "What does the R-squared value indicate in regression?",
+            "title": "What does KPI stand for in business analytics?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "The proportion of variance explained by the model", "value": "variance_explained", "is_correct": true},
-              {"id": "opt2", "text": "The number of features in the model", "value": "number_features", "is_correct": false},
-              {"id": "opt3", "text": "The training time of the model", "value": "training_time", "is_correct": false},
-              {"id": "opt4", "text": "The size of the dataset", "value": "dataset_size", "is_correct": false}
+              {"id": "opt1", "text": "Key Performance Indicator", "value": "key_performance", "is_correct": true},
+              {"id": "opt2", "text": "Key Process Integration", "value": "key_process", "is_correct": false},
+              {"id": "opt3", "text": "Knowledge Processing Index", "value": "knowledge_processing", "is_correct": false},
+              {"id": "opt4", "text": "Kernel Performance Interface", "value": "kernel_performance", "is_correct": false}
             ],
             "order": 8
           },
           {
             "id": "q10",
             "type": "single_choice",
-            "title": "Which algorithm is commonly used for clustering?",
+            "title": "Which SQL JOIN returns only rows that have matching values in both tables?",
             "required": true,
             "options": [
-              {"id": "opt1", "text": "K-means", "value": "k_means", "is_correct": true},
-              {"id": "opt2", "text": "Linear Regression", "value": "linear_reg", "is_correct": false},
-              {"id": "opt3", "text": "Logistic Regression", "value": "logistic_reg", "is_correct": false},
-              {"id": "opt4", "text": "Decision Trees", "value": "decision_trees", "is_correct": false}
+              {"id": "opt1", "text": "INNER JOIN", "value": "inner_join", "is_correct": true},
+              {"id": "opt2", "text": "LEFT JOIN", "value": "left_join", "is_correct": false},
+              {"id": "opt3", "text": "RIGHT JOIN", "value": "right_join", "is_correct": false},
+              {"id": "opt4", "text": "OUTER JOIN", "value": "outer_join", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-6-1",
+    "job_id": "job-6",
+    "title": "React Native Developer Assessment",
+    "description": "Technical assessment for React Native Developer position focusing on mobile app development, React Native framework, and cross-platform development.",
+    "is_active": true,
+    "created_at": "2024-01-16T10:00:00Z",
+    "updated_at": "2024-01-16T10:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "rn-section-1",
+        "title": "React Native Development Skills",
+        "description": "Questions covering React Native, mobile development, and cross-platform concepts",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "Which component is used to create scrollable content in React Native?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "ScrollView", "value": "scroll_view", "is_correct": true},
+              {"id": "opt2", "text": "View", "value": "view", "is_correct": false},
+              {"id": "opt3", "text": "Text", "value": "text", "is_correct": false},
+              {"id": "opt4", "text": "ListView", "value": "list_view", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are core React Native components? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "View", "value": "view_comp", "is_correct": true},
+              {"id": "opt2", "text": "Text", "value": "text_comp", "is_correct": true},
+              {"id": "opt3", "text": "TouchableOpacity", "value": "touchable_opacity", "is_correct": true},
+              {"id": "opt4", "text": "div", "value": "div_comp", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What is the React Native equivalent of HTML div?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "View", "value": "rn_view", "is_correct": true},
+              {"id": "opt2", "text": "Container", "value": "container", "is_correct": false},
+              {"id": "opt3", "text": "Box", "value": "box", "is_correct": false},
+              {"id": "opt4", "text": "Section", "value": "section", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which layout system does React Native use by default?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Flexbox", "value": "flexbox", "is_correct": true},
+              {"id": "opt2", "text": "Grid", "value": "grid", "is_correct": false},
+              {"id": "opt3", "text": "Absolute positioning", "value": "absolute", "is_correct": false},
+              {"id": "opt4", "text": "Table layout", "value": "table", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are navigation libraries for React Native? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "React Navigation", "value": "react_navigation", "is_correct": true},
+              {"id": "opt2", "text": "React Native Navigation", "value": "rn_navigation", "is_correct": true},
+              {"id": "opt3", "text": "Native Base", "value": "native_base", "is_correct": false},
+              {"id": "opt4", "text": "React Router", "value": "react_router", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "How do you handle platform-specific code in React Native?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Using Platform.OS and platform-specific files", "value": "platform_specific", "is_correct": true},
+              {"id": "opt2", "text": "Using only iOS code", "value": "ios_only", "is_correct": false},
+              {"id": "opt3", "text": "Using only Android code", "value": "android_only", "is_correct": false},
+              {"id": "opt4", "text": "Platform-specific code is not possible", "value": "not_possible", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "Which hook is used for handling device orientation changes?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "useDeviceOrientation", "value": "use_device_orientation", "is_correct": true},
+              {"id": "opt2", "text": "useOrientation", "value": "use_orientation", "is_correct": false},
+              {"id": "opt3", "text": "useRotation", "value": "use_rotation", "is_correct": false},
+              {"id": "opt4", "text": "useScreen", "value": "use_screen", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are ways to style components in React Native? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "StyleSheet.create()", "value": "stylesheet_create", "is_correct": true},
+              {"id": "opt2", "text": "Inline styles", "value": "inline_styles", "is_correct": true},
+              {"id": "opt3", "text": "Styled Components", "value": "styled_components", "is_correct": true},
+              {"id": "opt4", "text": "CSS files", "value": "css_files", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is the purpose of AsyncStorage in React Native?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To store data locally on the device", "value": "local_storage", "is_correct": true},
+              {"id": "opt2", "text": "To make API calls", "value": "api_calls", "is_correct": false},
+              {"id": "opt3", "text": "To handle navigation", "value": "handle_navigation", "is_correct": false},
+              {"id": "opt4", "text": "To manage app state", "value": "manage_state", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "Which command is used to run a React Native app on iOS simulator?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "npx react-native run-ios", "value": "run_ios", "is_correct": true},
+              {"id": "opt2", "text": "npm start ios", "value": "npm_start_ios", "is_correct": false},
+              {"id": "opt3", "text": "yarn ios", "value": "yarn_ios", "is_correct": false},
+              {"id": "opt4", "text": "expo run ios", "value": "expo_run_ios", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-7-1",
+    "job_id": "job-7",
+    "title": "Cloud Infrastructure Engineer Assessment",
+    "description": "Technical assessment for Cloud Infrastructure Engineer position focusing on AWS, Terraform, Kubernetes, and cloud architecture.",
+    "is_active": true,
+    "created_at": "2024-01-17T10:00:00Z",
+    "updated_at": "2024-01-17T10:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "cloud-section-1",
+        "title": "Cloud Infrastructure Skills",
+        "description": "Questions covering AWS, Terraform, Kubernetes, and cloud best practices",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "Which AWS service is used for container orchestration?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Amazon EKS", "value": "eks", "is_correct": true},
+              {"id": "opt2", "text": "Amazon S3", "value": "s3", "is_correct": false},
+              {"id": "opt3", "text": "Amazon RDS", "value": "rds", "is_correct": false},
+              {"id": "opt4", "text": "Amazon Lambda", "value": "lambda", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are Infrastructure as Code (IaC) tools? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Terraform", "value": "terraform", "is_correct": true},
+              {"id": "opt2", "text": "CloudFormation", "value": "cloudformation", "is_correct": true},
+              {"id": "opt3", "text": "Ansible", "value": "ansible", "is_correct": true},
+              {"id": "opt4", "text": "MySQL", "value": "mysql", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What is a Kubernetes Pod?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "The smallest deployable unit containing one or more containers", "value": "smallest_unit", "is_correct": true},
+              {"id": "opt2", "text": "A storage volume", "value": "storage_volume", "is_correct": false},
+              {"id": "opt3", "text": "A network interface", "value": "network_interface", "is_correct": false},
+              {"id": "opt4", "text": "A configuration file", "value": "config_file", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which Terraform command is used to apply infrastructure changes?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "terraform apply", "value": "tf_apply", "is_correct": true},
+              {"id": "opt2", "text": "terraform deploy", "value": "tf_deploy", "is_correct": false},
+              {"id": "opt3", "text": "terraform create", "value": "tf_create", "is_correct": false},
+              {"id": "opt4", "text": "terraform run", "value": "tf_run", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are AWS compute services? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "EC2", "value": "ec2", "is_correct": true},
+              {"id": "opt2", "text": "Lambda", "value": "lambda_service", "is_correct": true},
+              {"id": "opt3", "text": "ECS", "value": "ecs", "is_correct": true},
+              {"id": "opt4", "text": "S3", "value": "s3_service", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is the purpose of a Load Balancer?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Distribute incoming traffic across multiple servers", "value": "distribute_traffic", "is_correct": true},
+              {"id": "opt2", "text": "Store database backups", "value": "store_backups", "is_correct": false},
+              {"id": "opt3", "text": "Encrypt network traffic", "value": "encrypt_traffic", "is_correct": false},
+              {"id": "opt4", "text": "Monitor system performance", "value": "monitor_performance", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "Which Kubernetes object manages a set of identical pods?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Deployment", "value": "deployment", "is_correct": true},
+              {"id": "opt2", "text": "Service", "value": "service", "is_correct": false},
+              {"id": "opt3", "text": "ConfigMap", "value": "configmap", "is_correct": false},
+              {"id": "opt4", "text": "Secret", "value": "secret", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are benefits of using containers? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Portability", "value": "portability", "is_correct": true},
+              {"id": "opt2", "text": "Resource efficiency", "value": "resource_efficiency", "is_correct": true},
+              {"id": "opt3", "text": "Isolation", "value": "isolation", "is_correct": true},
+              {"id": "opt4", "text": "Slower deployment", "value": "slower_deployment", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is AWS VPC?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Virtual Private Cloud - isolated network environment", "value": "virtual_private_cloud", "is_correct": true},
+              {"id": "opt2", "text": "Virtual Processing Center", "value": "virtual_processing", "is_correct": false},
+              {"id": "opt3", "text": "Verified Public Certificate", "value": "verified_certificate", "is_correct": false},
+              {"id": "opt4", "text": "Variable Price Calculator", "value": "price_calculator", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "Which tool is used for monitoring Kubernetes clusters?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Prometheus", "value": "prometheus", "is_correct": true},
+              {"id": "opt2", "text": "Jenkins", "value": "jenkins", "is_correct": false},
+              {"id": "opt3", "text": "Docker", "value": "docker", "is_correct": false},
+              {"id": "opt4", "text": "Nginx", "value": "nginx", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-8-1",
+    "job_id": "job-8",
+    "title": "Test Automation Engineer Assessment",
+    "description": "Technical assessment for Test Automation Engineer position focusing on Selenium, Python testing frameworks, and automation best practices.",
+    "is_active": true,
+    "created_at": "2024-01-18T10:00:00Z",
+    "updated_at": "2024-01-18T10:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "automation-section-1",
+        "title": "Test Automation Skills",
+        "description": "Questions covering Selenium, test frameworks, and automation strategies",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "Which method is used to find an element by ID in Selenium?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "find_element(By.ID, 'element_id')", "value": "find_by_id", "is_correct": true},
+              {"id": "opt2", "text": "get_element_by_id('element_id')", "value": "get_by_id", "is_correct": false},
+              {"id": "opt3", "text": "locate_element_id('element_id')", "value": "locate_id", "is_correct": false},
+              {"id": "opt4", "text": "select_by_id('element_id')", "value": "select_id", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are popular test automation frameworks in Python? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "pytest", "value": "pytest", "is_correct": true},
+              {"id": "opt2", "text": "unittest", "value": "unittest", "is_correct": true},
+              {"id": "opt3", "text": "Robot Framework", "value": "robot_framework", "is_correct": true},
+              {"id": "opt4", "text": "Django", "value": "django", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What is the Page Object Model (POM) in test automation?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "A design pattern that creates an object repository for web UI elements", "value": "design_pattern", "is_correct": true},
+              {"id": "opt2", "text": "A database model for storing test data", "value": "database_model", "is_correct": false},
+              {"id": "opt3", "text": "A method for parallel test execution", "value": "parallel_execution", "is_correct": false},
+              {"id": "opt4", "text": "A reporting framework", "value": "reporting_framework", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which Selenium WebDriver method is used to wait for an element to be clickable?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "WebDriverWait with element_to_be_clickable", "value": "wait_clickable", "is_correct": true},
+              {"id": "opt2", "text": "time.sleep()", "value": "time_sleep", "is_correct": false},
+              {"id": "opt3", "text": "implicitly_wait()", "value": "implicit_wait", "is_correct": false},
+              {"id": "opt4", "text": "thread.sleep()", "value": "thread_sleep", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are types of waits in Selenium? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Implicit Wait", "value": "implicit_wait_type", "is_correct": true},
+              {"id": "opt2", "text": "Explicit Wait", "value": "explicit_wait", "is_correct": true},
+              {"id": "opt3", "text": "Fluent Wait", "value": "fluent_wait", "is_correct": true},
+              {"id": "opt4", "text": "Static Wait", "value": "static_wait", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is the purpose of assertions in automated tests?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To verify that expected conditions are met", "value": "verify_conditions", "is_correct": true},
+              {"id": "opt2", "text": "To start the test execution", "value": "start_execution", "is_correct": false},
+              {"id": "opt3", "text": "To close the browser", "value": "close_browser", "is_correct": false},
+              {"id": "opt4", "text": "To generate test data", "value": "generate_data", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "Which approach is best for handling dynamic elements in web automation?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Using explicit waits with expected conditions", "value": "explicit_waits", "is_correct": true},
+              {"id": "opt2", "text": "Using fixed sleep statements", "value": "fixed_sleep", "is_correct": false},
+              {"id": "opt3", "text": "Refreshing the page repeatedly", "value": "refresh_page", "is_correct": false},
+              {"id": "opt4", "text": "Ignoring dynamic elements", "value": "ignore_elements", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are benefits of test automation? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Faster test execution", "value": "faster_execution", "is_correct": true},
+              {"id": "opt2", "text": "Repeatable tests", "value": "repeatable_tests", "is_correct": true},
+              {"id": "opt3", "text": "Reduced human error", "value": "reduced_error", "is_correct": true},
+              {"id": "opt4", "text": "100% bug detection", "value": "perfect_detection", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is data-driven testing?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Running the same test with multiple sets of data", "value": "multiple_data_sets", "is_correct": true},
+              {"id": "opt2", "text": "Testing database operations only", "value": "database_only", "is_correct": false},
+              {"id": "opt3", "text": "Using only test data from production", "value": "production_data", "is_correct": false},
+              {"id": "opt4", "text": "Testing without any test data", "value": "no_test_data", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "Which is a best practice for test automation?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Keep tests independent and atomic", "value": "independent_tests", "is_correct": true},
+              {"id": "opt2", "text": "Create tests that depend on each other", "value": "dependent_tests", "is_correct": false},
+              {"id": "opt3", "text": "Use hardcoded wait times everywhere", "value": "hardcoded_waits", "is_correct": false},
+              {"id": "opt4", "text": "Never use assertions", "value": "no_assertions", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-9-1",
+    "job_id": "job-9",
+    "title": "Technical Lead Assessment",
+    "description": "Assessment for Technical Lead position focusing on leadership skills, architecture decisions, team management, and technical mentoring.",
+    "is_active": true,
+    "created_at": "2024-01-19T10:00:00Z",
+    "updated_at": "2024-01-19T10:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "tech-lead-section-1",
+        "title": "Technical Leadership Skills",
+        "description": "Questions covering technical leadership, architecture, and team management",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "What is the primary role of a Technical Lead?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Guide technical decisions and mentor team members", "value": "guide_mentor", "is_correct": true},
+              {"id": "opt2", "text": "Write all the code for the project", "value": "write_all_code", "is_correct": false},
+              {"id": "opt3", "text": "Manage only the project timeline", "value": "manage_timeline", "is_correct": false},
+              {"id": "opt4", "text": "Handle customer support issues", "value": "customer_support", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are key responsibilities of a Technical Lead? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Architecture design", "value": "architecture_design", "is_correct": true},
+              {"id": "opt2", "text": "Code reviews", "value": "code_reviews", "is_correct": true},
+              {"id": "opt3", "text": "Team mentoring", "value": "team_mentoring", "is_correct": true},
+              {"id": "opt4", "text": "Marketing campaigns", "value": "marketing", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What is technical debt?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "The cost of rework caused by choosing quick solutions over better approaches", "value": "rework_cost", "is_correct": true},
+              {"id": "opt2", "text": "Money owed for software licenses", "value": "license_money", "is_correct": false},
+              {"id": "opt3", "text": "Time spent in meetings", "value": "meeting_time", "is_correct": false},
+              {"id": "opt4", "text": "Server hosting costs", "value": "hosting_costs", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which architectural pattern promotes loose coupling between components?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Microservices architecture", "value": "microservices", "is_correct": true},
+              {"id": "opt2", "text": "Monolithic architecture", "value": "monolithic", "is_correct": false},
+              {"id": "opt3", "text": "Tightly coupled architecture", "value": "tightly_coupled", "is_correct": false},
+              {"id": "opt4", "text": "Single-tier architecture", "value": "single_tier", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are effective code review practices? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Focus on code quality and standards", "value": "code_quality", "is_correct": true},
+              {"id": "opt2", "text": "Provide constructive feedback", "value": "constructive_feedback", "is_correct": true},
+              {"id": "opt3", "text": "Review small, frequent changes", "value": "small_changes", "is_correct": true},
+              {"id": "opt4", "text": "Only focus on syntax errors", "value": "syntax_only", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is the main goal of Agile software development?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Deliver working software frequently with customer collaboration", "value": "deliver_frequently", "is_correct": true},
+              {"id": "opt2", "text": "Follow a detailed plan without changes", "value": "detailed_plan", "is_correct": false},
+              {"id": "opt3", "text": "Minimize customer interaction", "value": "minimize_interaction", "is_correct": false},
+              {"id": "opt4", "text": "Focus only on documentation", "value": "documentation_focus", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "How should a Technical Lead handle disagreements within the team?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Facilitate discussion and seek data-driven solutions", "value": "facilitate_discussion", "is_correct": true},
+              {"id": "opt2", "text": "Make all decisions independently", "value": "independent_decisions", "is_correct": false},
+              {"id": "opt3", "text": "Avoid addressing the disagreement", "value": "avoid_disagreement", "is_correct": false},
+              {"id": "opt4", "text": "Always side with senior developers", "value": "side_senior", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are important qualities for technical leadership? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Communication skills", "value": "communication", "is_correct": true},
+              {"id": "opt2", "text": "Empathy and emotional intelligence", "value": "empathy", "is_correct": true},
+              {"id": "opt3", "text": "Technical expertise", "value": "technical_expertise", "is_correct": true},
+              {"id": "opt4", "text": "Micromanagement", "value": "micromanagement", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is the purpose of a retrospective meeting?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Reflect on what went well and what can be improved", "value": "reflect_improve", "is_correct": true},
+              {"id": "opt2", "text": "Plan the next sprint features", "value": "plan_features", "is_correct": false},
+              {"id": "opt3", "text": "Review individual performance", "value": "individual_performance", "is_correct": false},
+              {"id": "opt4", "text": "Discuss salary adjustments", "value": "salary_discussion", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "How should a Technical Lead approach mentoring junior developers?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Provide guidance while encouraging independent problem-solving", "value": "guidance_independence", "is_correct": true},
+              {"id": "opt2", "text": "Solve all problems for them", "value": "solve_all_problems", "is_correct": false},
+              {"id": "opt3", "text": "Give them tasks without any support", "value": "no_support", "is_correct": false},
+              {"id": "opt4", "text": "Only focus on their technical skills", "value": "technical_only", "is_correct": false}
+            ],
+            "order": 9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assessment-job-10-1",
+    "job_id": "job-10",
+    "title": "Content Developer Assessment",
+    "description": "Assessment for Content Developer position focusing on content writing, documentation skills, marketing content, and communication strategies.",
+    "is_active": true,
+    "created_at": "2024-01-20T10:00:00Z",
+    "updated_at": "2024-01-20T10:00:00Z",
+    "created_by": "system",
+    "sections": [
+      {
+        "id": "content-section-1",
+        "title": "Content Development Skills",
+        "description": "Questions covering content writing, documentation, marketing, and communication",
+        "order": 0,
+        "required": true,
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single_choice",
+            "title": "What is the primary goal of technical documentation?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To clearly explain complex concepts to the target audience", "value": "explain_concepts", "is_correct": true},
+              {"id": "opt2", "text": "To impress readers with technical jargon", "value": "impress_jargon", "is_correct": false},
+              {"id": "opt3", "text": "To make content as long as possible", "value": "long_content", "is_correct": false},
+              {"id": "opt4", "text": "To avoid providing examples", "value": "avoid_examples", "is_correct": false}
+            ],
+            "order": 0
+          },
+          {
+            "id": "q2",
+            "type": "multiple_choice",
+            "title": "Which are essential elements of good content? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Clear structure", "value": "clear_structure", "is_correct": true},
+              {"id": "opt2", "text": "Engaging tone", "value": "engaging_tone", "is_correct": true},
+              {"id": "opt3", "text": "Accurate information", "value": "accurate_info", "is_correct": true},
+              {"id": "opt4", "text": "Complex vocabulary", "value": "complex_vocabulary", "is_correct": false}
+            ],
+            "order": 1
+          },
+          {
+            "id": "q3",
+            "type": "single_choice",
+            "title": "What does SEO stand for in content marketing?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Search Engine Optimization", "value": "search_engine_opt", "is_correct": true},
+              {"id": "opt2", "text": "Social Engagement Operations", "value": "social_engagement", "is_correct": false},
+              {"id": "opt3", "text": "Sales Enhancement Objectives", "value": "sales_enhancement", "is_correct": false},
+              {"id": "opt4", "text": "Strategic Editorial Organization", "value": "editorial_org", "is_correct": false}
+            ],
+            "order": 2
+          },
+          {
+            "id": "q4",
+            "type": "single_choice",
+            "title": "Which writing principle improves readability?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Using short sentences and active voice", "value": "short_sentences", "is_correct": true},
+              {"id": "opt2", "text": "Using only passive voice", "value": "passive_voice", "is_correct": false},
+              {"id": "opt3", "text": "Writing very long paragraphs", "value": "long_paragraphs", "is_correct": false},
+              {"id": "opt4", "text": "Avoiding bullet points", "value": "avoid_bullets", "is_correct": false}
+            ],
+            "order": 3
+          },
+          {
+            "id": "q5",
+            "type": "multiple_choice",
+            "title": "Which are types of content marketing? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Blog posts", "value": "blog_posts", "is_correct": true},
+              {"id": "opt2", "text": "White papers", "value": "white_papers", "is_correct": true},
+              {"id": "opt3", "text": "Video content", "value": "video_content", "is_correct": true},
+              {"id": "opt4", "text": "Database schemas", "value": "database_schemas", "is_correct": false}
+            ],
+            "order": 4
+          },
+          {
+            "id": "q6",
+            "type": "single_choice",
+            "title": "What is a call-to-action (CTA) in marketing content?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "A prompt that encourages readers to take a specific action", "value": "prompt_action", "is_correct": true},
+              {"id": "opt2", "text": "A phone number for customer service", "value": "phone_number", "is_correct": false},
+              {"id": "opt3", "text": "A detailed product specification", "value": "product_spec", "is_correct": false},
+              {"id": "opt4", "text": "A company address", "value": "company_address", "is_correct": false}
+            ],
+            "order": 5
+          },
+          {
+            "id": "q7",
+            "type": "single_choice",
+            "title": "Which format is best for step-by-step instructions?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Numbered lists with clear action items", "value": "numbered_lists", "is_correct": true},
+              {"id": "opt2", "text": "Long continuous paragraphs", "value": "continuous_paragraphs", "is_correct": false},
+              {"id": "opt3", "text": "Only images without text", "value": "images_only", "is_correct": false},
+              {"id": "opt4", "text": "Random bullet points", "value": "random_bullets", "is_correct": false}
+            ],
+            "order": 6
+          },
+          {
+            "id": "q8",
+            "type": "multiple_choice",
+            "title": "Which are important considerations for web content? (Select all that apply)",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Mobile-friendly formatting", "value": "mobile_friendly", "is_correct": true},
+              {"id": "opt2", "text": "Scannable content structure", "value": "scannable_structure", "is_correct": true},
+              {"id": "opt3", "text": "Loading speed optimization", "value": "loading_speed", "is_correct": true},
+              {"id": "opt4", "text": "Using only text without images", "value": "text_only", "is_correct": false}
+            ],
+            "order": 7
+          },
+          {
+            "id": "q9",
+            "type": "single_choice",
+            "title": "What is the purpose of content personalization?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "To tailor content to specific audience segments for better engagement", "value": "tailor_audience", "is_correct": true},
+              {"id": "opt2", "text": "To make all content identical", "value": "identical_content", "is_correct": false},
+              {"id": "opt3", "text": "To reduce content production costs", "value": "reduce_costs", "is_correct": false},
+              {"id": "opt4", "text": "To make content more complex", "value": "complex_content", "is_correct": false}
+            ],
+            "order": 8
+          },
+          {
+            "id": "q10",
+            "type": "single_choice",
+            "title": "Which metric is most important for measuring content effectiveness?",
+            "required": true,
+            "options": [
+              {"id": "opt1", "text": "Conversion rate and user engagement", "value": "conversion_engagement", "is_correct": true},
+              {"id": "opt2", "text": "Word count only", "value": "word_count", "is_correct": false},
+              {"id": "opt3", "text": "Number of images used", "value": "image_count", "is_correct": false},
+              {"id": "opt4", "text": "Time spent writing", "value": "writing_time", "is_correct": false}
             ],
             "order": 9
           }

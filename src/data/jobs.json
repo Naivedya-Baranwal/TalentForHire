@@ -1,14 +1,15 @@
 [
   {
     "id": "job-1",
-    "title": "Senior Frontend Developer",
-    "slug": "senior-frontend-developer",
-    "description": "We're looking for a Senior Frontend Developer to join our Engineering team and help build impactful products.",
+    "title": "UI Developer",
+    "slug": "ui-developer",
+    "description": "We're looking for a UI Developer to join our Engineering team and help create beautiful, responsive user interfaces.",
     "status": "active",
     "tags": [
-      "React",
-      "TypeScript",
-      "Remote"
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "UI/UX"
     ],
     "location": "San Francisco, CA",
     "type": "Full-time",
@@ -19,14 +20,14 @@
   },
   {
     "id": "job-2",
-    "title": "Product Manager",
-    "slug": "product-manager",
-    "description": "We're looking for a Product Manager to join our Engineering team and help build impactful products.",
+    "title": "Senior Product Manager",
+    "slug": "senior-product-manager",
+    "description": "We're looking for a Senior Product Manager to join our Engineering team and help drive product strategy and execution.",
     "status": "active",
     "tags": [
-      "Product",
-      "Strategy",
-      "B2B"
+      "Product Strategy",
+      "Roadmap",
+      "Analytics"
     ],
     "location": "San Francisco, CA",
     "type": "Remote",
@@ -37,14 +38,14 @@
   },
   {
     "id": "job-3",
-    "title": "UX Designer",
-    "slug": "ux-designer",
-    "description": "We're looking for a UX Designer to join our Data team and help build impactful products.",
+    "title": "Frontend Developer",
+    "slug": "frontend-developer",
+    "description": "We're looking for a Frontend Developer to join our Data team and help build dynamic web applications.",
     "status": "active",
     "tags": [
-      "Design",
-      "UX",
-      "Figma"
+      "React",
+      "Vue.js",
+      "JavaScript"
     ],
     "location": "Mumbai, MH",
     "type": "Full-time",
@@ -55,14 +56,14 @@
   },
   {
     "id": "job-4",
-    "title": "Backend Engineer",
-    "slug": "backend-engineer",
-    "description": "We're looking for a Backend Engineer to join our Product team and help build impactful products.",
+    "title": "Senior Backend Engineer",
+    "slug": "senior-backend-engineer",
+    "description": "We're looking for a Senior Backend Engineer to join our Product team and help architect scalable server-side solutions.",
     "status": "active",
     "tags": [
       "Node.js",
       "Python",
-      "AWS"
+      "Microservices"
     ],
     "location": "Pune, MH",
     "type": "Remote",
@@ -73,13 +74,13 @@
   },
   {
     "id": "job-5",
-    "title": "Data Scientist",
-    "slug": "data-scientist",
-    "description": "We're looking for a Data Scientist to join our Security team and help build impactful products.",
+    "title": "Junior Data Analyst",
+    "slug": "junior-data-analyst",
+    "description": "We're looking for a Junior Data Analyst to join our Security team and help analyze business metrics and insights.",
     "status": "draft",
     "tags": [
-      "Python",
-      "ML",
+      "SQL",
+      "Excel",
       "Analytics"
     ],
     "location": "San Francisco, CA",
@@ -91,13 +92,13 @@
   },
   {
     "id": "job-6",
-    "title": "Mobile Engineer",
-    "slug": "mobile-engineer",
-    "description": "We're looking for a Mobile Engineer to join our Design team and help build impactful products.",
+    "title": "React Native Developer",
+    "slug": "react-native-developer",
+    "description": "We're looking for a React Native Developer to join our Design team and help build cross-platform mobile applications.",
     "status": "paused",
     "tags": [
-      "iOS",
-      "Swift",
+      "React Native",
+      "JavaScript",
       "Mobile"
     ],
     "location": "San Francisco, CA",
@@ -109,13 +110,13 @@
   },
   {
     "id": "job-7",
-    "title": "DevOps Engineer",
-    "slug": "devops-engineer",
-    "description": "We're looking for a DevOps Engineer to join our Operations team and help build impactful products.",
+    "title": "Cloud Infrastructure Engineer",
+    "slug": "cloud-infrastructure-engineer",
+    "description": "We're looking for a Cloud Infrastructure Engineer to join our Operations team and help manage scalable cloud infrastructure.",
     "status": "active",
     "tags": [
-      "CI/CD",
-      "Docker",
+      "AWS",
+      "Terraform",
       "Kubernetes"
     ],
     "location": "New York, NY",
@@ -127,14 +128,14 @@
   },
   {
     "id": "job-8",
-    "title": "QA Engineer",
-    "slug": "qa-engineer",
-    "description": "We're looking for a QA Engineer to join our Security team and help build impactful products.",
+    "title": "Test Automation Engineer",
+    "slug": "test-automation-engineer",
+    "description": "We're looking for a Test Automation Engineer to join our Security team and help build automated testing frameworks.",
     "status": "draft",
     "tags": [
-      "Testing",
+      "Automation",
       "Selenium",
-      "Cypress"
+      "Python"
     ],
     "location": "New York, NY",
     "type": "Remote",
@@ -145,14 +146,14 @@
   },
   {
     "id": "job-9",
-    "title": "Engineering Manager",
-    "slug": "engineering-manager",
-    "description": "We're looking for a Engineering Manager to join our Security team and help build impactful products.",
+    "title": "Technical Lead",
+    "slug": "technical-lead",
+    "description": "We're looking for a Technical Lead to join our Security team and help guide technical decisions and mentor developers.",
     "status": "active",
     "tags": [
       "Leadership",
-      "Team Management",
-      "Hiring"
+      "Architecture",
+      "Mentoring"
     ],
     "location": "Berlin, DE",
     "type": "Full-time",
@@ -163,14 +164,14 @@
   },
   {
     "id": "job-10",
-    "title": "Technical Writer",
-    "slug": "technical-writer",
-    "description": "We're looking for a Technical Writer to join our Sales team and help build impactful products.",
+    "title": "Content Developer",
+    "slug": "content-developer",
+    "description": "We're looking for a Content Developer to join our Sales team and help create engaging content and documentation.",
     "status": "active",
     "tags": [
-      "Docs",
-      "Technical Writing",
-      "API"
+      "Content Writing",
+      "Documentation",
+      "Marketing"
     ],
     "location": "Chicago, IL",
     "type": "Remote",

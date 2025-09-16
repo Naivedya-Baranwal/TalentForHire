@@ -51,7 +51,7 @@ const Navigation = () => {
                 <div className="absolute -inset-1 bg-primary/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               </div>
               <span className="text-xl font-bold  bg-clip-text  select-none">
-                HR Manager
+                TalentForHire
               </span>
             </NavLink>
 

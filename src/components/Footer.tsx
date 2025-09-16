@@ -8,7 +8,6 @@ import {
   Phone, 
   MapPin,
   ChevronRight,
-  Heart,
   Briefcase
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -53,7 +52,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="h-7 w-7 text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">HR Management</h3>
+              <h3 className="text-2xl font-bold text-foreground">TalentForHire</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm">
               Streamline your hiring process with our modern HR management platform. 
@@ -126,7 +125,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span className="break-all">contact@hrmanagement.com</span>
+                <span className="break-all">contact@talentforhire.com</span>
               </a>
               <a
                 href="tel:+1234567890"
@@ -154,10 +153,8 @@ const Footer = () => {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Copyright */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <span>© {currentYear} HR Management. Made with</span>
-            <Heart className="h-3 w-3 text-red-500 fill-current" />
-            <span>by your team</span>
-          </div>
+            <span>© {currentYear} TalentForHire.</span>
+           </div>
 
           {/* Legal Links */}
           <div className="flex flex-wrap gap-4">

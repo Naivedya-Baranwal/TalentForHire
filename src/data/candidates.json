@@ -1,206 +1,206 @@
 [
   {
-    "id": "candidate-1",
-    "name": "Abdul Muid",
-    "email": "abdul@gmail.com",
-    "phone": "+1 (555) 1001-2001",
-    "jobId": "job-3",
-    "stage": "applied",
-    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    "location": "Nashville, TN",
-    "experience": "10 years",
-    "skills": [
-      "Django",
-      "Redis"
-    ],
-    "appliedAt": "2024-01-29T20:43:56Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-1-applied",
-        "type": "applied",
-        "message": "Applied for position (job-3)",
-        "createdAt": "2024-01-29T20:43:56Z",
-        "createdBy": "system"
-      }
-    ]
-  },
-  {
-    "id": "candidate-2",
-    "name": "Abhay Singh",
-    "email": "david.johnson2@example.com",
-    "phone": "+1 (555) 1002-2002",
-    "jobId": "job-6",
-    "stage": "applied",
-    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    "location": "Mumbai, MH",
-    "experience": "11 years",
-    "skills": [
-      "Design Systems",
-      ".NET"
-    ],
-    "appliedAt": "2024-01-21T19:56:56Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-2-applied",
-        "type": "applied",
-        "message": "Applied for position (job-6)",
-        "createdAt": "2024-01-21T19:56:56Z",
-        "createdBy": "system"
-      }
-    ]
-  },
-  {
-    "id": "candidate-3",
-    "name": "Lucky Singh",
-    "email": "manish.gandhi3@example.com",
-    "phone": "+91 (555) 1003-2003",
-    "jobId": "job-5",
-    "stage": "applied",
-    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    "location": "Austin, TX",
-    "experience": "4 years",
-    "skills": [
-      "UX Design",
-      "React",
-      "Kubernetes",
-      "Celery"
-    ],
-    "appliedAt": "2024-01-16T11:12:37Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-3-applied",
-        "type": "applied",
-        "message": "Applied for position (job-5)",
-        "createdAt": "2024-01-16T11:12:37Z",
-        "createdBy": "system"
-      }
-    ]
-  },
-  {
-    "id": "candidate-4",
-    "name": "Naivedya Baranwal",
-    "email": "michael.jones4@example.com",
-    "phone": "+1 (555) 1004-2004",
-    "jobId": "job-8",
-    "stage": "applied",
-    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    "location": "Omaha, NE",
-    "experience": "9 years",
-    "skills": [
-      "Tailwind CSS",
-      ".NET",
-      "Figma"
-    ],
-    "appliedAt": "2024-01-09T06:18:42Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-4-applied",
-        "type": "applied",
-        "message": "Applied for position (job-8)",
-        "createdAt": "2024-01-09T06:18:42Z",
-        "createdBy": "system"
-      }
-    ]
-  },
-  {
-    "id": "candidate-5",
-    "name": "Noah Khan",
-    "email": "noah.khan5@example.com",
-    "phone": "+1 (555) 1005-2005",
-    "jobId": "job-22",
-    "stage": "screen",
-    "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&h=150&fit=crop&crop=face",
-    "location": "Honolulu, HI",
-    "experience": "5 years",
-    "skills": [
-      "Azure",
-      "Redis",
-      "Performance",
-      "Rust"
-    ],
-    "appliedAt": "2024-01-09T21:31:07Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-5-applied",
-        "type": "applied",
-        "message": "Applied for position (job-22)",
-        "createdAt": "2024-01-09T21:31:07Z",
-        "createdBy": "system"
-      },
-      {
-        "id": "timeline-5-screen",
-        "type": "screen",
-        "message": "Moved to screening stage",
-        "createdAt": "2024-01-11T02:31:07Z",
-        "createdBy": "recruiter@company.com"
-      }
-    ]
-  },
-  {
-    "id": "candidate-6",
-    "name": "Manoj Kumar Sharma",
-    "email": "vivaan.iyer6@example.com",
-    "phone": "+91 (555) 1006-2006",
-    "jobId": "job-8",
-    "stage": "applied",
-    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    "location": "New York, NY",
-    "experience": "5 years",
-    "skills": [
-      "Angular",
-      "Redis",
-      "Kubernetes"
-    ],
-    "appliedAt": "2024-01-16T19:57:36Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-6-applied",
-        "type": "applied",
-        "message": "Applied for position (job-8)",
-        "createdAt": "2024-01-16T19:57:36Z",
-        "createdBy": "system"
-      }
-    ]
-  },
-  {
-    "id": "candidate-7",
-    "name": "Raviranjan Kumar",
-    "email": "emma.clark7@example.com",
-    "phone": "+1 (555) 1007-2007",
-    "jobId": "job-1",
-    "stage": "screen",
-    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
-    "location": "Los Angeles, CA",
-    "experience": "1 years",
-    "skills": [
-      "Kubernetes",
-      "Scala"
-    ],
-    "appliedAt": "2024-01-14T18:15:21Z",
-    "notes": [],
-    "timeline": [
-      {
-        "id": "timeline-7-applied",
-        "type": "applied",
-        "message": "Applied for position (job-1)",
-        "createdAt": "2024-01-14T18:15:21Z",
-        "createdBy": "system"
-      },
-      {
-        "id": "timeline-7-screen",
-        "type": "screen",
-        "message": "Moved to screening stage",
-        "createdAt": "2024-01-19T19:15:21Z",
-        "createdBy": "recruiter@company.com"
-      }
-    ]
-  },
+  "id": "candidate-1",
+  "name": "Rahul Verma",
+  "email": "rahul.verma@example.com",
+  "phone": "+1 (555) 1001-2001",
+  "jobId": "job-3",
+  "stage": "applied",
+  "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+  "location": "Nashville, TN",
+  "experience": "10 years",
+  "skills": [
+    "Django",
+    "Redis"
+  ],
+  "appliedAt": "2024-01-29T20:43:56Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-1-applied",
+      "type": "applied",
+      "message": "Applied for position (job-3)",
+      "createdAt": "2024-01-29T20:43:56Z",
+      "createdBy": "system"
+    }
+  ]
+},
+{
+  "id": "candidate-2",
+  "name": "Priya Nair",
+  "email": "priya.nair@example.com",
+  "phone": "+1 (555) 1002-2002",
+  "jobId": "job-6",
+  "stage": "applied",
+  "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+  "location": "Mumbai, MH",
+  "experience": "11 years",
+  "skills": [
+    "Design Systems",
+    ".NET"
+  ],
+  "appliedAt": "2024-01-21T19:56:56Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-2-applied",
+      "type": "applied",
+      "message": "Applied for position (job-6)",
+      "createdAt": "2024-01-21T19:56:56Z",
+      "createdBy": "system"
+    }
+  ]
+},
+{
+  "id": "candidate-3",
+  "name": "Ankit Tiwari",
+  "email": "ankit.tiwari@example.com",
+  "phone": "+91 (555) 1003-2003",
+  "jobId": "job-5",
+  "stage": "applied",
+  "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+  "location": "Austin, TX",
+  "experience": "4 years",
+  "skills": [
+    "UX Design",
+    "React",
+    "Kubernetes",
+    "Celery"
+  ],
+  "appliedAt": "2024-01-16T11:12:37Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-3-applied",
+      "type": "applied",
+      "message": "Applied for position (job-5)",
+      "createdAt": "2024-01-16T11:12:37Z",
+      "createdBy": "system"
+    }
+  ]
+},
+{
+  "id": "candidate-4",
+  "name": "Sneha Kapoor",
+  "email": "sneha.kapoor@example.com",
+  "phone": "+1 (555) 1004-2004",
+  "jobId": "job-8",
+  "stage": "applied",
+  "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+  "location": "Omaha, NE",
+  "experience": "9 years",
+  "skills": [
+    "Tailwind CSS",
+    ".NET",
+    "Figma"
+  ],
+  "appliedAt": "2024-01-09T06:18:42Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-4-applied",
+      "type": "applied",
+      "message": "Applied for position (job-8)",
+      "createdAt": "2024-01-09T06:18:42Z",
+      "createdBy": "system"
+    }
+  ]
+},
+{
+  "id": "candidate-5",
+  "name": "Vikram Mehta",
+  "email": "vikram.mehta@example.com",
+  "phone": "+1 (555) 1005-2005",
+  "jobId": "job-22",
+  "stage": "screen",
+  "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&h=150&fit=crop&crop=face",
+  "location": "Honolulu, HI",
+  "experience": "5 years",
+  "skills": [
+    "Azure",
+    "Redis",
+    "Performance",
+    "Rust"
+  ],
+  "appliedAt": "2024-01-09T21:31:07Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-5-applied",
+      "type": "applied",
+      "message": "Applied for position (job-22)",
+      "createdAt": "2024-01-09T21:31:07Z",
+      "createdBy": "system"
+    },
+    {
+      "id": "timeline-5-screen",
+      "type": "screen",
+      "message": "Moved to screening stage",
+      "createdAt": "2024-01-11T02:31:07Z",
+      "createdBy": "recruiter@company.com"
+    }
+  ]
+},
+{
+  "id": "candidate-6",
+  "name": "Meera Joshi",
+  "email": "meera.joshi@example.com",
+  "phone": "+91 (555) 1006-2006",
+  "jobId": "job-8",
+  "stage": "applied",
+  "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+  "location": "New York, NY",
+  "experience": "5 years",
+  "skills": [
+    "Angular",
+    "Redis",
+    "Kubernetes"
+  ],
+  "appliedAt": "2024-01-16T19:57:36Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-6-applied",
+      "type": "applied",
+      "message": "Applied for position (job-8)",
+      "createdAt": "2024-01-16T19:57:36Z",
+      "createdBy": "system"
+    }
+  ]
+},
+{
+  "id": "candidate-7",
+  "name": "Karan Malhotra",
+  "email": "karan.malhotra@example.com",
+  "phone": "+1 (555) 1007-2007",
+  "jobId": "job-1",
+  "stage": "screen",
+  "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+  "location": "Los Angeles, CA",
+  "experience": "1 years",
+  "skills": [
+    "Kubernetes",
+    "Scala"
+  ],
+  "appliedAt": "2024-01-14T18:15:21Z",
+  "notes": [],
+  "timeline": [
+    {
+      "id": "timeline-7-applied",
+      "type": "applied",
+      "message": "Applied for position (job-1)",
+      "createdAt": "2024-01-14T18:15:21Z",
+      "createdBy": "system"
+    },
+    {
+      "id": "timeline-7-screen",
+      "type": "screen",
+      "message": "Moved to screening stage",
+      "createdAt": "2024-01-19T19:15:21Z",
+      "createdBy": "recruiter@company.com"
+    }
+  ]
+},
   {
     "id": "candidate-8",
     "name": "Sophia Johnson",
