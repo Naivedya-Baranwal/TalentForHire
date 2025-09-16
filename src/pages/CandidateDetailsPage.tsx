@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   ArrowLeft,
+  ArrowBigLeft,
   Mail,
   Phone,
   MapPin,
@@ -179,13 +180,6 @@ const CandidateDetailsPage: React.FC = () => {
       <div className="container mx-auto px-4 py-6 lg:py-8">
         {/* Header row with back and hero */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-1 mb-6 sm:mb-8">
-          <Button variant="ghost" size="sm" asChild className="w-fit">
-            <Link to="/candidates">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">Back to Candidates</span>
-              <span className="sm:hidden">Back</span>
-            </Link>
-          </Button>
 
           <div className="hidden sm:block h-6 w-px bg-border" />
 
@@ -195,7 +189,13 @@ const CandidateDetailsPage: React.FC = () => {
             style={getStageStripeStyle(candidate.stage)}
           >
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                  <Button variant="ghost" size="sm" asChild className="w-fit">
+              <Link to="/candidates">
+                <ArrowBigLeft className="h-8 w-8" />
+              </Link>
+            </Button>
+
                 <Avatar className="h-14 w-14 sm:h-16 sm:w-16 mx-auto sm:mx-0">
                   <AvatarImage src={candidate.avatar} alt={candidate.name} />
                   <AvatarFallback className="text-sm sm:text-xl">

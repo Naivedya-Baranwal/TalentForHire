@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ArrowLeft, Users, FileText, MapPin, Calendar, Building2 } from 'lucide-react';
+import { ArrowLeft,ArrowBigLeft, Users, FileText, MapPin, Calendar, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -79,13 +79,7 @@ const JobDetailsPage = () => {
       <div className="container mx-auto px-4 py-6 lg:py-8">
         {/* Header / Hero */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
-          <Button variant="ghost" size="sm" asChild className="w-fit">
-            <Link to="/jobs">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">Back to Jobs</span>
-              <span className="sm:hidden">Back</span>
-            </Link>
-          </Button>
+        
 
           <div className="hidden sm:block h-6 w-px bg-border" />
 
@@ -97,6 +91,11 @@ const JobDetailsPage = () => {
             <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                 <Button variant="ghost" size="sm" asChild className="w-fit">
+            <Link to="/jobs">
+              <ArrowBigLeft className="h-8 w-8" />
+            </Link>
+          </Button>
                   <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground">
                     {job.title}
                   </h1>
@@ -106,7 +105,7 @@ const JobDetailsPage = () => {
                 </div>
 
                 {/* Meta */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:ml-12 gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Building2 className="h-3 w-3 sm:h-4 sm:w-4" />
                     <span>{job.department}</span>
