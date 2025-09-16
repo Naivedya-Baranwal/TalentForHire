@@ -20,7 +20,6 @@ export const candidatesApi = {
     });
 
     const response = await api.get(`/candidates?${searchParams.toString()}`);
-    // ✅ FIXED: Don't access .data since axios interceptor already extracted it
     console.log("✅ Candidates API Response:", response);
     return response; // This is already the MSW data from interceptor
   },

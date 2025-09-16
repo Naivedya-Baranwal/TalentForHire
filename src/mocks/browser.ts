@@ -5,8 +5,6 @@ import { handlers } from '@/mocks/handlers';
 export const worker = setupWorker(...handlers);
 
 export const startMockServer = async () => {
-  // Enable MSW in both development and production
-  // since we're using IndexedDB as our primary data source
   return worker.start({
     onUnhandledRequest: 'warn',
     serviceWorker: {

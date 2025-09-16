@@ -103,7 +103,7 @@ const CandidatesPage: React.FC = () => {
       case "tech":
         return { borderLeftColor: "hsl(var(--primary))" };
       case "offer":
-        return { borderLeftColor: "hsl(38 92% 55%)" }; // amber-like, consistent with tokens above
+        return { borderLeftColor: "hsl(38 92% 55%)" }; 
       case "hired":
         return { borderLeftColor: "hsl(var(--success))" };
       case "rejected":
@@ -338,7 +338,6 @@ const CandidatesPage: React.FC = () => {
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex justify-center">
-            {/* <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border"> */}
               <Pagination
                 currentPage={pagination.currentPage}
                 totalPages={totalPages}
@@ -349,7 +348,6 @@ const CandidatesPage: React.FC = () => {
                 totalItems={totalCandidates}
                 itemsPerPage={pagination.itemsPerPage}
               />
-            {/* </div> */}
           </div>
         )}
       </div>

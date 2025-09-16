@@ -481,104 +481,6 @@ async updateCandidateStageWithTimeline(
     return newNote;
   },
 
-  // ✅ CRUD Operations for Assessments
-  // async createAssessment(assessmentData: Partial<Assessment>): Promise<Assessment> {
-  //   const newAssessment: Assessment = {
-  //     id: `assessment-${Date.now()}`,
-  //     job_id: assessmentData.job_id || '',
-  //     title: assessmentData.title || 'New Assessment',
-  //     description: assessmentData.description || '',
-  //     sections: assessmentData.sections || [],
-  //     is_active: assessmentData.is_active || true,
-  //     created_at: new Date().toISOString(),
-  //     updated_at: new Date().toISOString(),
-  //     created_by: 'current-user@company.com',
-  //     ...assessmentData
-  //   };
-
-  //   await db.assessments.add(newAssessment);
-  //   console.log('✅ Assessment created:', newAssessment.id);
-  //   return newAssessment;
-  // },
-
-  // async updateAssessment(id: string, updates: Partial<Assessment>): Promise<Assessment | null> {
-  //   const updatedData = {
-  //     ...updates,
-  //     updated_at: new Date().toISOString()
-  //   };
-
-  //   await db.assessments.update(id, updatedData);
-  //   const updatedAssessment = await db.assessments.get(id);
-  //   console.log('✅ Assessment updated:', id);
-  //   return updatedAssessment || null;
-  // },
-
-  // async deleteAssessment(id: string): Promise<boolean> {
-  //   await db.assessments.delete(id);
-  //   console.log('✅ Assessment deleted:', id);
-  //   return true;
-  // },
-
-  // async getAssessment(id: string): Promise<Assessment | null> {
-  //   const assessment = await db.assessments.get(id);
-  //   return assessment || null;
-  // },
-
-  // async getAssessmentByJobId(jobId: string): Promise<Assessment | null> {
-  //   const assessment = await db.assessments.where('job_id').equals(jobId).first();
-  //   return assessment || null;
-  // },
-
-  // async getAllAssessments(): Promise<Assessment[]> {
-  //   return await db.assessments.orderBy('created_at').toArray();
-  // },
-
-  // Updated dbUtils for multiple assessments per job
-// async createAssessment(assessmentData: Partial<Assessment>): Promise<Assessment> {
-//   // ✅ CHANGED: Check if job already has an assessment (single only)
-//   const existingAssessment = await this.getAssessmentByJobId(assessmentData.job_id || '');
-//   if (existingAssessment) {
-//     throw new Error('An assessment already exists for this job. Only one assessment allowed per job.');
-//   }
-
-//   // ✅ CHANGED: Remove assessment number logic, create single assessment
-//   const newAssessment: Assessment = {
-//     id: `assessment-${assessmentData.job_id}-${Date.now()}`,
-//     job_id: assessmentData.job_id || '',
-//     // ✅ REMOVED: assessment_number field
-//     title: assessmentData.title || `Assessment for Job`,
-//     description: assessmentData.description || '',
-//     sections: assessmentData.sections || [],
-//     is_active: assessmentData.is_active ?? true,
-//     created_at: new Date().toISOString(),
-//     updated_at: new Date().toISOString(),
-//     created_by: assessmentData.created_by || 'current-user@company.com',
-//     ...assessmentData
-//   };
-
-//   await db.assessments.add(newAssessment);
-//   console.log('✅ Assessment created:', newAssessment.id);
-//   return newAssessment;
-// },
-
-// async updateAssessment(id: string, updates: Partial<Assessment>): Promise<Assessment | null> {
-//   const updatedData = {
-//     ...updates,
-//     updated_at: new Date().toISOString()
-//   };
-
-//   await db.assessments.update(id, updatedData);
-//   const updatedAssessment = await db.assessments.get(id);
-//   console.log('✅ Assessment updated:', id);
-//   return updatedAssessment || null;
-// },
-
-// ✅ FIXED: Create assessment with proper job_id validation
-// Add this import at the top of your database.ts file
-
-
-// Fixed createAssessment method
-
 // ✅ FIXED: Use put() instead of add() for upsert behavior
 async createAssessment(assessmentData: Omit<Assessment, 'created_at' | 'updated_at'>): Promise<Assessment> {
   try {
@@ -664,10 +566,6 @@ async getAssessmentByJobId(jobId: string): Promise<Assessment | null> {
 async getAllAssessments(): Promise<Assessment[]> {
   return await db.assessments.orderBy('created_at').toArray();
 },
-
-
-// ✅ REMOVED: getAssessmentsByJobId - no longer needed since single assessment only
-// Old method that returned multiple assessments is no longer needed
 
 // ✅ DEPRECATED: Keep for backward compatibility but mark as deprecated
 async getAssessmentByJobIdAndNumber(jobId: string, assessmentNumber: number): Promise<Assessment | null> {
