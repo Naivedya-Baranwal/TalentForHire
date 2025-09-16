@@ -190,7 +190,7 @@ const CandidateDetailsPage: React.FC = () => {
           >
             <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <Button variant="ghost" size="sm" asChild className="w-fit">
+            <Button variant="ghost" size="sm" asChild className="w-fit">
               <Link to="/candidates">
                 <ArrowBigLeft className="h-8 w-8" />
               </Link>

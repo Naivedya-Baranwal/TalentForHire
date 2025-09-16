@@ -120,7 +120,6 @@ const JobDetailsPage = () => {
                   </div>
                 </div>
 
-                {/* Primary CTA */}
                 <div className="flex sm:justify-end">
                   <Link to={`/assessments/${job.id}`} aria-label="Open assessment">
                     <Button
