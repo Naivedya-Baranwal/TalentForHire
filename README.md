@@ -143,7 +143,7 @@ On your first visit, the application will:
 - Seed the database with sample data:
   - 25 diverse job postings (active, archived, draft, paused)
   - 1000 randomly generated candidates
-  - 3+ pre-built assessments with various question types
+  - 10 pre-built assessments with various question types
 - Set up the Mock Service Worker for API simulation
 
 ---
@@ -252,7 +252,6 @@ The application uses **Mock Service Worker (MSW)** for realistic API simulation:
 
 ##### Candidate Management
 - `GET /api/candidates` - List candidates with search and filters
-- `GET /api/candidates/:id` - Get detailed candidate profile
 - `POST /api/candidates` - Create a new candidate
 - `PATCH /api/candidates/:id` - Update candidate information
 - `PATCH /api/candidates/:id/stage` - Update candidate stage with timeline
