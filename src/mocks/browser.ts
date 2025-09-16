@@ -5,13 +5,12 @@ import { handlers } from '@/mocks/handlers';
 export const worker = setupWorker(...handlers);
 
 export const startMockServer = async () => {
-  if (process.env.NODE_ENV === 'development') {
-    return worker.start({
-      onUnhandledRequest: 'warn',
-      serviceWorker: {
-        url: '/mockServiceWorker.js',
-      },
-    });
-  }
-  return Promise.resolve();
+  // Enable MSW in both development and production
+  // since we're using IndexedDB as our primary data source
+  return worker.start({
+    onUnhandledRequest: 'warn',
+    serviceWorker: {
+      url: '/mockServiceWorker.js',
+    },
+  });
 };

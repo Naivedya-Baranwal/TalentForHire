@@ -11,17 +11,16 @@ import { worker } from './mocks/browser';
 
 async function startApp() {
   try {
-    // ✅ 1. Start MSW first
-    if (process.env.NODE_ENV === 'development') {
-      console.log('🔄 Starting MSW...');
-      await worker.start({
-        onUnhandledRequest: 'warn', // Log unhandled requests
-        serviceWorker: {
-          url: '/mockServiceWorker.js'
-        }
-      });
-      console.log('✅ MSW started successfully');
-    }
+    // ✅ 1. Start MSW in both development and production
+    // Since we're using IndexedDB as our data source, we need MSW in production too
+    console.log('🔄 Starting MSW...');
+    await worker.start({
+      onUnhandledRequest: 'warn', // Log unhandled requests
+      serviceWorker: {
+        url: '/mockServiceWorker.js'
+      }
+    });
+    console.log('✅ MSW started successfully');
 
     // ✅ 2. Initialize IndexedDB
     console.log('🔄 Initializing database...');
