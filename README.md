@@ -18,12 +18,11 @@
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
+- [Setup](#-setup)
 - [Project Structure](#-project-structure)
 - [API Simulation Details](#-api-simulation)
 - [Data Management](#-data-management)
 - [Available Scripts](#-available-scripts)
-- [Contributing](#-contributing)
 - [License](#-license)
 
 ---
@@ -51,11 +50,8 @@
 - **Multiple Question Types**: 
   - Single choice (radio buttons)
   - Multiple choice (checkboxes)
-  - Short and long text responses
-  - Numeric inputs with range validation
-  - File upload capabilities (stubbed)
+  - text responses
 - **Live Preview**: Real-time assessment form preview
-- **Response Management**: Store and validate candidate responses with conditional logic
 - **Persistent Storage**: All data saved locally using IndexedDB
 
 ### 🎨 User Experience
@@ -78,7 +74,6 @@
 - **Redux Toolkit 2.9.0** - Predictable state management
 - **React Query 5.83.0** - Server state management and caching
 - **React Hook Form 7.61.1** - Performant form handling
-- **Zod 3.25.76** - Schema validation
 
 ### UI/UX Libraries
 - **Tailwind CSS 3.4.17** - Utility-first CSS framework
@@ -100,7 +95,7 @@
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Setup
 
 ### Prerequisites
 
@@ -112,7 +107,7 @@ Make sure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/talentforhire.git
+   git clone https://github.com/naivedyabaranwal/talentforhire.git
    cd talentforhire
    ```
 
@@ -152,26 +147,62 @@ On your first visit, the application will:
 
 ```
 talentForHire/
-├── public/                 # Static assets
-│   ├── favicon.ico
-│   ├── mockServiceWorker.js # MSW worker file
-│   └── placeholder.svg
+├── public/                # Static assets
+│ ├── favicon.ico
+│ ├── mockServiceWorker.js # MSW worker file
+│ └── placeholder.svg
 ├── src/
-│   ├── components/         # Reusable UI components
-│   ├── features/          # Thunks and slice for state management 
-|   ├── pages/             # Route components
-│   ├── hooks/             # Custom React hooks
-│   ├── lib/               # Utility functions
-│   ├── store/             # Redux store configuration
-│   ├── types/             # TypeScript type definitions
-│   ├── App.tsx            # Main application component
-│   ├── index.css          # Global styles
-│   ├── main.tsx           # Application entry point
-│   └── store.ts           # Redux store setup
-├── package.json
-├── tailwind.config.ts     # Tailwind configuration
-├── tsconfig.json          # TypeScript configuration
-└── vite.config.ts         # Vite configuration
+│ ├── components/
+│ │ └── ui/                # Reusable UI components
+│ │ ├── Footer.tsx
+│ │ ├── KanbanBoard.tsx
+│ │ ├── Navigation.tsx
+│ │ └── Pagination.tsx
+│ ├── data/                # Seeded data for jobs,candidates and assessments
+│ │ ├── assessments.json
+│ │ ├── candidates.json
+│ │ └── jobs.json
+│ ├── features/            # Thunks and slice for state management 
+│ │ ├── assessments/
+│ │ │ ├── assessmentsSlice.ts
+│ │ │ └── assessmentsThunks.ts
+│ │ ├── candidates/
+│ │ │ ├── candidatesSlice.ts
+│ │ │ └── candidatesThunks.ts
+│ │ └── jobs/
+│ │ ├── jobsSlice.ts
+│ │ └── jobsThunks.ts
+│ ├── hooks/                # Custom React hooks
+│ │ ├── use-mobile.ts
+│ │ └── use-toast.ts
+│ ├── lib/                  # Utility functions
+│ │ ├── database.ts
+│ │ └── utils.ts
+│ ├── mocks/                # Mock Service Worker (MSW) setup file
+│ │ ├── browser.ts
+│ │ └── handlers.ts
+│ ├── pages/                # Route components
+│ │ ├── AssessmentBuilderPage.tsx
+│ │ ├── CandidateDetailsPage.tsx
+│ │ ├── CandidatesPage.tsx
+│ │ ├── DashboardPage.tsx
+│ │ ├── JobDetailsPage.tsx
+│ │ ├── JobsPage.tsx
+│ │ └── NotFound.tsx
+│ ├── services/              # api services
+│ │ ├── _apis
+│ │ ├── assessmentsApi.ts
+│ │ ├── candidatesApi.ts
+│ │ └── jobsApi.ts
+│ ├── App.tsx                # Root application component 
+│ ├── index.css              # Global styles
+│ ├── main.tsx               # Application entry point
+│ └── store.ts               # Redux store configuration
+├── package.json             # Project metadata and dependencies file
+├── tailwind.config.ts       # Tailwind configuration
+├── tsconfig.json            # TypeScript configuration
+└── vite.config.ts           # Vite configuration
+
 ```
 
 ---
@@ -184,14 +215,14 @@ TalentForHire implements a sophisticated client-side architecture that simulates
 ### Architecture Diagram
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     React Frontend Application              │
+│                  React Frontend Application                 │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │ UI Components │  │ Redux Store │  │  React Query Cache│  │
-│  │  (Shadcn/ui)  │  │   (State)   │  │   (Server State)  │  │
+│  │UI Components│  │ Redux Store │  │  React Query Cache  │  │
+│  │ (Shadcn/ui) │  │   (State)   │  │   (Server State)    │  │
 │  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
-│                        HTTP Layer (Axios)                   │
+│                     HTTP Layer (Axios)                      │
 ├─────────────────────────────────────────────────────────────┤
 │            Mock Service Worker (MSW) - INTERCEPTION         │
 │               • Intercepts all HTTP requests                │
@@ -253,7 +284,6 @@ The application uses **Mock Service Worker (MSW)** for realistic API simulation:
 
 ##### Candidate Management
 - `GET /api/candidates` - List candidates with search and filters
-- `PATCH /api/candidates/:id` - Update candidate information
 - `PATCH /api/candidates/:id/stage` - Update candidate stage with timeline
 - `POST /api/candidates/:id/notes` - Add notes to candidate profile
 
@@ -275,9 +305,8 @@ The application uses **Mock Service Worker (MSW)** for realistic API simulation:
 ### Data Models
 - **Jobs**: Title, description, status, requirements, location
 - **Candidates**: Personal info, stage, application history, notes
-- **Assessments**: Questions, validation rules, scoring logic
-- **Responses**: Candidate answers with timestamps and validation
-
+- **Assessments**: Questions, validation rules
+  
 ---
 
 ## 📜 Available Scripts
@@ -311,11 +340,11 @@ TalentForHire is built as a client-side application that simulates a full-stack 
 │                         Frontend (React)                    │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │   UI Layer  │  │Redux Store  │  │  React Query        │  │
-│  │  (Shadcn)   │  │  (State)    │  │  (Server State)     │  │
+│  │   UI Layer  │  │ Redux Store │  │    React Query      │  │
+│  │  (Shadcn)   │  │  (State)    │  │   (Server State)    │  │
 │  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
-│                    Mock Service Worker (MSW)                │
+│                  Mock Service Worker (MSW)                  │
 │                 Intercepts all API requests                 │
 ├─────────────────────────────────────────────────────────────┤
 │                      IndexedDB (Dexie)                      │
@@ -525,7 +554,7 @@ async function startApp() {
 **Solution:**
 - **Normalized database schema** with proper relationships
 - **Recursive component architecture** for nested questions
-- **Form state management** with React Hook Form and Zod validation
+- **Form state management** with React Hook Form 
 - **Result:** Flexible assessment system supporting multiple question types
 
 ---
@@ -560,7 +589,6 @@ Automatically tracks all candidate journey milestones:
 - Stage transitions (Applied → Screen → Tech → Offer → Hired)
 - Note additions
 - Status changes
-- Assessment completions
 
 **Implementation:**
 - Timeline events generated automatically on state changes
@@ -588,7 +616,6 @@ Access the main dashboard at `/dashboard` for an overview of:
 2. Create new jobs with the "+ New Job" button
 3. Edit existing jobs by clicking on job cards
 4. Use drag-and-drop to reorder job priorities
-5. Filter jobs by status, location, or other criteria
 
 ### Candidate Pipeline
 1. Visit `/candidates` for the candidate management interface
@@ -601,27 +628,6 @@ Access the main dashboard at `/dashboard` for an overview of:
 1. Access assessment builder via `/assessments/:jobId`
 2. Add various question types using the intuitive interface
 3. Preview assessments in real-time
-4. Configure validation rules and conditional logic
-5. Publish assessments for candidate completion
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Guidelines
-- Follow the existing code style and patterns
-- Write meaningful commit messages
-- Add tests for new features
-- Update documentation as needed
-- Ensure all linting checks pass
 
 ---
 
@@ -636,77 +642,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built as part of a React Technical Assignment
 - UI components powered by [Shadcn/ui](https://ui.shadcn.com/)
 - Icons provided by [Lucide React](https://lucide.dev/)
-- Design inspiration from modern hiring platforms
 
 ---
 
-## 🎯 Evaluation Criteria Coverage
-
-This project meets all specified evaluation criteria:
-
-### ✅ Code Quality
-- **Clean Architecture**: Modular component structure with separation of concerns
-- **TypeScript**: 100% type coverage with strict mode enabled
-- **Code Standards**: ESLint configuration with consistent formatting
-- **Reusable Components**: Atomic design with Shadcn/ui components
-- **Error Handling**: Comprehensive error boundaries and graceful fallbacks
-
-### ✅ App Structure
-- **Organized File Structure**: Feature-based organization with clear separation
-- **State Management**: Redux Toolkit for global state, React Query for server state
-- **Routing**: React Router v6 with dynamic imports and code splitting
-- **Data Layer**: Centralized API services and database utilities
-- **Type Safety**: Shared TypeScript interfaces across all layers
-
-### ✅ Functionality
-- **Complete CRUD Operations**: Jobs, Candidates, and Assessments management
-- **Advanced Features**: Drag-and-drop, virtualization, real-time search
-- **Data Persistence**: All data persists using IndexedDB
-- **Offline Support**: Full functionality without internet connection
-- **Performance**: Handles 1000+ records smoothly with virtualization
-
-### ✅ UI/UX
-- **Responsive Design**: Mobile and desktop optimized layouts
-- **Modern Interface**: Clean, professional design with Tailwind CSS
-- **Accessibility**: WCAG compliant with Radix UI components
-- **User Feedback**: Toast notifications, loading states, and error messages
-- **Dark Mode**: System-aware theme switching
-
-### ✅ State Management
-- **Redux Toolkit**: Predictable state updates with DevTools support
-- **React Query**: Efficient server state caching and synchronization
-- **Optimistic Updates**: Instant UI feedback with rollback on errors
-- **Performance**: Memoization and selective re-renders
-
-### ✅ Deployment
-- **Production Ready**: Deployed on Vercel with CI/CD
-- **Environment Configuration**: Proper build optimization
-- **Service Workers**: MSW enabled in production for demo purposes
-- **Performance**: Lighthouse score > 90 for performance metrics
-
-### ✅ Documentation
-- **Comprehensive README**: Setup instructions, architecture, and features
-- **Code Comments**: Inline documentation for complex logic
-- **Type Documentation**: TypeScript interfaces with JSDoc comments
-- **API Documentation**: Complete endpoint documentation with examples
-
-### ✅ Bonus Features Implemented
-- **🔄 Drag and Drop**: Job reordering and candidate stage management
-- **🔍 Advanced Search**: Real-time filtering with debouncing
-- **📈 Data Visualization**: Dashboard with charts (Recharts)
-- **📝 Assessment Builder**: Dynamic form creation with multiple question types
-- **📅 Timeline Tracking**: Complete audit trail for all candidate activities
-- **💬 @Mentions**: Note system with team collaboration features
-- **🚀 Performance**: Virtual scrolling for large datasets
-- **🔒 Type Safety**: End-to-end TypeScript implementation
-- **🌐 Offline Mode**: Complete offline functionality with IndexedDB
-- **🎨 Theming**: Dark/Light mode with system preference detection
-
----
-
-## 📞 Support
-
-If you encounter any issues or have questions:
 1. Check the [Issues](https://github.com/yourusername/talentforhire/issues) page
 2. Create a new issue with detailed information
 3. Contact the maintainers
