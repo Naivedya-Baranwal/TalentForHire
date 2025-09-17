@@ -637,16 +637,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built as part of a React Technical Assignment
 - UI components powered by [Shadcn/ui](https://ui.shadcn.com/)
 - Icons provided by [Lucide React](https://lucide.dev/)
-
----
-
-1. Check the [Issues](https://github.com/yourusername/talentforhire/issues) page
-2. Create a new issue with detailed information
-3. Contact the maintainers
-
-**Happy Hiring! 🎉**
