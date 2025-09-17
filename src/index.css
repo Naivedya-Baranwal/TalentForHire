@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TalentFlow HR - Modern Emerald/Teal Professional Theme */
-
 @layer components {
-  /* Fix for dialog centering issues */
   [data-radix-dialog-content] {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -17,7 +14,7 @@
 
 @layer base {
   :root {
-    /* Base colors - Clean and professional */
+    /* Base colors */
     --background: 210 20% 98%;
     --foreground: 215 25% 12%;
 
@@ -30,12 +27,12 @@
     --popover-foreground: 215 25% 12%;
 
     /* Primary brand colors - Modern Emerald/Teal */
-    --primary: 160 84% 39%;  /* Professional emerald */
+    --primary: 160 84% 39%;  /* emerald */
     --primary-foreground: 0 0% 100%;
     --primary-hover: 160 84% 35%;
     --primary-light: 160 84% 85%;
 
-    /* Secondary colors - Soft complement */
+    /* Secondary colors */
     --secondary: 210 20% 95%;
     --secondary-foreground: 215 20% 25%;
     --secondary-hover: 210 20% 90%;
@@ -44,11 +41,11 @@
     --muted: 210 20% 96%;
     --muted-foreground: 215 15% 45%;
 
-    /* Accent colors - Warm coral for human touch */
+    /* Accent colors */
     --accent: 14 78% 92%;
     --accent-foreground: 14 78% 25%;
 
-    /* Status colors - Carefully chosen for accessibility */
+    /* Status colors */
     --success: 142 69% 40%;    /* Emerald green */
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 55%;     /* Warm amber */
@@ -94,7 +91,7 @@
   }
 
   .dark {
-    /* Dark mode - Sophisticated and easy on the eyes */
+    /* Dark mode */
     --background: 215 28% 7%;
     --foreground: 210 20% 92%;
 
@@ -106,7 +103,7 @@
     --popover: 215 25% 9%;
     --popover-foreground: 210 20% 92%;
 
-    /* Primary colors - Brighter emerald for dark mode */
+    /* Primary colors */
     --primary: 160 84% 50%;
     --primary-foreground: 215 28% 7%;
     --primary-hover: 160 84% 55%;
@@ -167,7 +164,7 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  /* Custom scrollbar styling */
+  /* scrollbar styling */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -185,7 +182,7 @@
     @apply bg-muted-foreground/50;
   }
 
-  /* Focus styles for better accessibility */
+  /* Focus styles */
   .focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2;
   }

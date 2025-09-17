@@ -160,7 +160,6 @@ const JobsPage = () => {
     });
   };
 
-  // Status stripe color (left border) using tokens for dark/light
   const getStatusStripeStyle = (status: string): React.CSSProperties => {
     switch (status) {
       case 'active':   return { borderLeftColor: 'hsl(var(--success))' };
@@ -198,7 +197,7 @@ const JobsPage = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Centered Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-3 pb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#28d768] mb-3 pb-2">
             Jobs Management
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
@@ -237,7 +236,7 @@ const JobsPage = () => {
 
             <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
               <DialogTrigger asChild>
-                <Button className="h-12 px-8 text-base font-semibold bg-gradient-primary rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <Button className="h-12 px-8 text-base font-semibold bg-[#30d66df1] rounded-xl shadow-lg hover:shadow-xl transition-all">
                   <Plus className="h-5 w-5 mr-2" />
                   Create New Job
                 </Button>
@@ -480,7 +479,7 @@ const JobsPage = () => {
                               <div className="absolute bottom-6 right-6">
                                 <Link to={`/jobs/${job.id}`} aria-label="View job">
                                   <Button 
-                                    className="bg-emerald-400 text-primary-foreground shadow-md hover:shadow-lg transition-all
+                                    className="bg-[#28d768] text-primary-foreground shadow-md hover:shadow-lg transition-all
                                                h-10 w-10 p-0 grid place-items-center rounded-full
                                                sm:h-10 sm:w-auto sm:px-4 sm:rounded-xl sm:flex sm:items-center sm:justify-center"
                                   >

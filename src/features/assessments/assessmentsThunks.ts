@@ -10,23 +10,23 @@ export const fetchAssessmentByJobId = createAsyncThunk(
       dispatch(setLoading(true));
       dispatch(setError(null));
       
-      console.log('🔍 Fetching assessment for jobId:', jobId);
+      console.log(' Fetching assessment for jobId:', jobId);
       
       const response = await assessmentsApi.getAssessmentByJobId(jobId);
       
-      console.log('📥 Fetch response:', response);
+      console.log(' Fetch response:', response);
       
       if (response.success && response.data) {
-        console.log('✅ Found assessment with job_id:', response.data.job_id);
+        console.log(' Found assessment with job_id:', response.data.job_id);
         dispatch(setCurrentAssessment(response.data));
       } else {
-        console.log('❌ No assessment found for jobId:', jobId);
+        console.log(' No assessment found for jobId:', jobId);
         dispatch(clearAssessment());
       }
       
       return response;
     } catch (error: any) {
-      console.error('❌ Error fetching assessment:', error);
+      console.error(' Error fetching assessment:', error);
       dispatch(setError(error.message || 'Failed to fetch assessment'));
       dispatch(clearAssessment());
       throw error;
@@ -43,10 +43,9 @@ export const createAssessment = createAsyncThunk(
       dispatch(setSaving(true));
       dispatch(setError(null));
       
-      // ✅ FIXED: Ensure job_id is always set
       const dataWithJobId = {
         ...assessmentData,
-        job_id: jobId, // ✅ CRITICAL: Ensure job_id is set
+        job_id: jobId,
         sections: assessmentData.sections || []
       };
       

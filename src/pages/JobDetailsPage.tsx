@@ -153,7 +153,7 @@ const JobDetailsPage = () => {
             <KanbanBoard jobId={job.id} />
           </TabsContent>
 
-          {/* Details: single column with responsive Job Information row */}
+          {/*single column with responsive Job Information row */}
           <TabsContent value="details" className="space-y-4 sm:space-y-6">
             {/* Job Information */}
             <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">

@@ -166,7 +166,6 @@ const DashboardPage: React.FC = () => {
   // Calculate statistics using total counts
   const activeJobs = jobs.filter(job => job.status === 'active').length;
 
-  // Get recent activities - fixed to use applied_at for candidates
   const recentJobs = [...jobs]
     .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
     .slice(0, 5);
@@ -182,7 +181,7 @@ const DashboardPage: React.FC = () => {
       <div className="container mx-auto px-4 py-8 max-w-7xl flex-1">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold bg-[#28d768] bg-clip-text text-transparent">
             Dashboard
           </h1>
           <p className="text-muted-foreground mt-2">
@@ -190,7 +189,6 @@ const DashboardPage: React.FC = () => {
           </p>
         </div>
 
-{/* Quick Stats - Top 4 boxes */}
 <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 mb-8">
   <StatCard
     title="Jobs"
@@ -224,9 +222,7 @@ const DashboardPage: React.FC = () => {
   />
 </div>
 
-        {/* Main Content Grid - Recent Candidates + Recent Jobs */}
         <div className="grid gap-6 lg:grid-cols-2 mb-8">
-          {/* Left side - Recent Candidates (simplified) */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
@@ -353,14 +349,14 @@ const DashboardPage: React.FC = () => {
         <div className="mt-8">
           <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
           <div className="flex flex-wrap gap-3">
-            <Button onClick={() => navigate('/jobs')} className="gap-2">
+            <Button onClick={() => navigate('/jobs')} className="gap-2 bg-[#28d768] text-black">
               <Briefcase className="h-4 w-4" />
               Post New Job
             </Button>
             <Button 
               variant="outline" 
               onClick={() => navigate('/candidates')}
-              className="gap-2"
+              className="gap-2 bg-[#28d768] text-black "
             >
               <Users className="h-4 w-4" />
               Review Candidates

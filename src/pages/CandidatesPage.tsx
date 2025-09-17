@@ -73,7 +73,6 @@ const CandidatesPage: React.FC = () => {
       .join("")
       .toUpperCase();
 
-  // Token-friendly stage → badge classes (works in light/dark)
   const getStageBadgeClass = (stage: string) => {
     switch (stage) {
       case "applied":
@@ -93,7 +92,6 @@ const CandidatesPage: React.FC = () => {
     }
   };
 
-  // Stage → left stripe color (border-left) using CSS variables
   const getStageStripeStyle = (stage: string): React.CSSProperties => {
     switch (stage) {
       case "applied":
@@ -135,7 +133,7 @@ const CandidatesPage: React.FC = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Centered Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-3">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#28d768] mb-3">
             Candidates
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
@@ -304,7 +302,7 @@ const CandidatesPage: React.FC = () => {
                       <Link to={`/candidates/${candidate.id}`} aria-label="View profile">
                         <button
                           className="
-                            bg-gradient-primary text-primary-foreground shadow-md hover:shadow-lg transition-all
+                            bg-[#2ed16a] text-primary-foreground shadow-md hover:shadow-lg transition-all
                             h-10 w-10 p-0 grid place-items-center rounded-full
                             sm:h-10 sm:w-auto sm:px-4 sm:rounded-xl sm:flex sm:items-center sm:justify-center
                             focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2

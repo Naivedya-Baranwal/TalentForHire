@@ -5,13 +5,13 @@ import { Assessment } from '../lib/database';
 export const handlers = [
 
   http.patch('/api/jobs/reorder', async ({ request }) => {
-    // artificial latency: 200 - 1200 ms
+    // artificial latency : 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted PATCH /api/jobs/reorder');
+    console.log('MSW: Intercepted PATCH /api/jobs/reorder');
     try {
       const { jobIds } = await request.json() as { jobIds: string[] };
-      console.log('🔄 Reordering jobs:', jobIds);
+      console.log('Reordering jobs:', jobIds);
       
       let min = Number.MAX_SAFE_INTEGER;
       for (let i = 0; i < jobIds.length; i++) {
@@ -24,20 +24,20 @@ export const handlers = [
         await dbUtils.updateJob(jobIds[i], { order: min + i });
       }
       
-      console.log('✅ Jobs reordered in IndexedDB');
+      console.log('Jobs reordered in IndexedDB');
       return HttpResponse.json({ success: true, data: jobIds });
     } catch (error) {
-      console.error('❌ Job reorder error:', error);
+      console.error('Job reorder error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to reorder jobs' }, { status: 500 });
     }
   }),
 
-  /* ---------------------- JOBS ---------------------- */
+  /* JOBS */
   http.get('/api/jobs', async ({ request }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted GET /api/jobs');
+    console.log('MSW: Intercepted GET /api/jobs');
     
     const url = new URL(request.url);
     const search = url.searchParams.get('search') ?? '';
@@ -46,7 +46,7 @@ export const handlers = [
     const pageSize = parseInt(url.searchParams.get('pageSize') ?? '10', 10);
 
     try {
-      // ✅ Query IndexedDB using dbUtils
+      // Query IndexedDB using dbUtils
       const allJobs = await dbUtils.getAllJobs({
         search: search || undefined,
         status: status && status !== 'all' ? status : undefined
@@ -74,20 +74,20 @@ export const handlers = [
         timestamp: new Date().toISOString(),
       };
 
-      console.log('✅ MSW: Returning', paginatedJobs.length, 'jobs from IndexedDB');
+      console.log('MSW: Returning', paginatedJobs.length, 'jobs from IndexedDB');
       return HttpResponse.json(responseData, { status: 200 });
     } catch (error) {
-      console.error('❌ MSW Jobs Error:', error);
+      console.error('MSW Jobs Error:', error);
       return HttpResponse.json({ success: false, error: 'Database error' }, { status: 500 });
     }
   }),
 
-  // ✅ GET single job
+  // GET single job
   http.get('/api/jobs/:id', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted GET /api/jobs/' + params.id);
+    console.log('MSW: Intercepted GET /api/jobs/' + params.id);
     
     try {
       const job = await dbUtils.getJob(params.id as string);
@@ -102,32 +102,32 @@ export const handlers = [
     }
   }),
 
-  // ✅ CREATE job - FIXED
+  // CREATE job - FIXED
   http.post('/api/jobs', async ({ request }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted POST /api/jobs');
+    console.log('MSW: Intercepted POST /api/jobs');
     
     try {
       const jobData = await request.json() as any;
-      console.log('📝 Creating job with data:', jobData);
+      console.log('Creating job with data:', jobData);
       
-      // ✅ Use dbUtils to create job in IndexedDB
+      // Use dbUtils to create job in IndexedDB
       const newJob = await dbUtils.createJob({
         ...jobData,
-        id: `job-${Date.now()}`, // ✅ Generate unique ID
+        id: `job-${Date.now()}`, // Generating unique ID
       });
       
-      console.log('✅ Job created in IndexedDB:', newJob.id);
+      console.log('Job created in IndexedDB:', newJob.id);
       return HttpResponse.json({ success: true, data: newJob }, { status: 201 });
     } catch (error) {
-      console.error('❌ Job creation error:', error);
+      console.error('Job creation error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to create job' }, { status: 500 });
     }
   }),
 
-  // ✅ UPDATE job - FIXED  
+  // UPDATE job 
   http.patch('/api/jobs/:id', async ({ request, params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
@@ -138,22 +138,22 @@ export const handlers = [
       const updates = await request.json() as any;
       console.log('📝 Updating job with:', updates);
       
-      // ✅ Use dbUtils to update job in IndexedDB
+      // Use dbUtils to update job in IndexedDB
       const updatedJob = await dbUtils.updateJob(params.id as string, updates);
       
       if (!updatedJob) {
         return HttpResponse.json({ success: false, error: 'Job not found' }, { status: 404 });
       }
 
-      console.log('✅ Job updated in IndexedDB:', updatedJob.id);
+      console.log('Job updated in IndexedDB:', updatedJob.id);
       return HttpResponse.json({ success: true, data: updatedJob });
     } catch (error) {
-      console.error('❌ Job update error:', error);
+      console.error('Job update error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to update job' }, { status: 500 });
     }
   }),
 
-  // ✅ DELETE job - FIXED
+  // DELETE job - FIXED
   http.delete('/api/jobs/:id', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
@@ -161,24 +161,24 @@ export const handlers = [
     console.log('🔍 MSW: Intercepted DELETE /api/jobs/' + params.id);
     
     try {
-      // ✅ Use dbUtils to delete from IndexedDB
+      // Use dbUtils to delete from IndexedDB
       await dbUtils.deleteJob(params.id as string);
       
-      console.log('✅ Job deleted from IndexedDB:', params.id);
+      console.log('Job deleted from IndexedDB:', params.id);
       return HttpResponse.json({ success: true, message: 'Job deleted' });
     } catch (error) {
-      console.error('❌ Job deletion error:', error);
+      console.error('Job deletion error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to delete job' }, { status: 500 });
     }
   }),
 
 
-  /* ------------------ CANDIDATES ------------------ */
+  /* CANDIDATES */
   http.get('/api/candidates', async ({ request }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted GET /api/candidates');
+    console.log('MSW: Intercepted GET /api/candidates');
     
     const url = new URL(request.url);
     const search = url.searchParams.get('search') ?? '';
@@ -215,15 +215,15 @@ export const handlers = [
         timestamp: new Date().toISOString(),
       };
 
-      console.log('✅ MSW: Returning', paginatedCandidates.length, 'candidates');
+      console.log('MSW: Returning', paginatedCandidates.length, 'candidates');
       return HttpResponse.json(responseData, { status: 200 });
     } catch (error) {
-      console.error('❌ MSW Candidates Error:', error);
+      console.error('MSW Candidates Error:', error);
       return HttpResponse.json({ success: false, error: 'Database error' }, { status: 500 });
     }
   }),
 
-  // ✅ Other candidate endpoints...
+  // GET candidate by ID
   http.get('/api/candidates/:id', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
@@ -239,17 +239,17 @@ export const handlers = [
     }
   }),
 
-  // ✅ ADD: Type-safe PATCH handler for updating candidates
+  // Type-safe PATCH handler for updating candidates
   http.patch('/api/candidates/:id', async ({ request, params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted PATCH /api/candidates/' + params.id);
+    console.log('MSW: Intercepted PATCH /api/candidates/' + params.id);
     
     try {
-      // ✅ Type-safe way to handle request body
+      // Type-safe way to handle request body
       const updates = await request.json() as Partial<Candidate>;
-      console.log('📝 Updating candidate with:', updates);
+      console.log('Updating candidate with:', updates);
       
       // Validate that we have a valid update object
       if (!updates || typeof updates !== 'object') {
@@ -269,10 +269,10 @@ export const handlers = [
         }, { status: 404 });
       }
 
-      console.log('✅ Candidate updated in IndexedDB:', updatedCandidate.id);
+      console.log('Candidate updated in IndexedDB:', updatedCandidate.id);
       return HttpResponse.json({ success: true, data: updatedCandidate });
     } catch (error) {
-      console.error('❌ Candidate update error:', error);
+      console.error('Candidate update error:', error);
       return HttpResponse.json({
         success: false,
         error: 'Failed to update candidate'
@@ -312,14 +312,12 @@ export const handlers = [
     );
   }),
 
-  // Add this handler to the handlers array in handlers.ts
-
-  // ✅ NEW: Update candidate stage with timeline
+  // Update candidate stage with timeline
   http.patch('/api/candidates/:id/stage', async ({ request, params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted PATCH /api/candidates/' + params.id + '/stage');
+    console.log('MSW: Intercepted PATCH /api/candidates/' + params.id + '/stage');
     try {
       const {
         candidateName,
@@ -335,7 +333,7 @@ export const handlers = [
         newStageTitle: string;
       };
 
-      console.log('📝 Updating candidate stage with timeline:', {
+      console.log('Updating candidate stage with timeline:', {
         candidateId: params.id,
         candidateName,
         previousStage,
@@ -361,10 +359,10 @@ export const handlers = [
         }, { status: 404 });
       }
 
-      console.log('✅ Candidate stage updated with timeline in IndexedDB:', updatedCandidate.id);
+      console.log('Candidate stage updated with timeline in IndexedDB:', updatedCandidate.id);
       return HttpResponse.json({ success: true, data: updatedCandidate });
     } catch (error) {
-      console.error('❌ Candidate stage update with timeline error:', error);
+      console.error('Candidate stage update with timeline error:', error);
       return HttpResponse.json({
         success: false,
         error: 'Failed to update candidate stage with timeline'
@@ -374,22 +372,22 @@ export const handlers = [
 
 
 
-  /* ------------------ ASSESSMENTS ------------------ */
-  // ✅ GET assessment by job ID - UPDATED for single assessment
+  /* ASSESSMENTS */
+  // GET assessment by job ID - UPDATED for single assessment
   http.get('/api/assessments/:jobId', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted GET /api/assessments/' + params.jobId);
+    console.log('MSW: Intercepted GET /api/assessments/' + params.jobId);
     
     try {
-      // ✅ CHANGED: Get single assessment for job (no assessment_number)
+      // Get single assessment for job 
       const assessment = await dbUtils.getAssessmentByJobId(params.jobId as string);
-      console.log('📋 Assessment found:', assessment ? 'Yes' : 'No');
+      console.log('Assessment found:', assessment ? 'Yes' : 'No');
       
       return HttpResponse.json({ success: true, data: assessment });
     } catch (error) {
-      console.error('❌ Assessment fetch error:', error);
+      console.error('Assessment fetch error:', error);
       return HttpResponse.json({ success: false, error: 'Database error' }, { status: 500 });
     }
   }),
@@ -398,34 +396,34 @@ export const handlers = [
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted PUT /api/assessments/' + params.jobId);
+    console.log('MSW: Intercepted PUT /api/assessments/' + params.jobId);
     
     try {
       const assessmentData = await request.json() as Record<string, any>;
-      console.log('📝 Saving assessment with jobId:', params.jobId);
-      console.log('📝 Assessment data:', assessmentData);
+      console.log('Saving assessment with jobId:', params.jobId);
+      console.log('Assessment data:', assessmentData);
       
-      // ✅ Check if assessment exists for this job
+      // Check if assessment exists for this job
       const existingAssessment = await dbUtils.getAssessmentByJobId(params.jobId as string);
       
       let assessment;
       
       if (existingAssessment) {
-        // ✅ UPDATE: Use existing assessment's ID and preserve created_at
-        console.log('📝 Updating existing assessment:', existingAssessment.id);
+        // Use existing assessment's ID and preserve created_at
+        console.log('Updating existing assessment:', existingAssessment.id);
         
         const updateData = {
           ...assessmentData,
           job_id: params.jobId as string, // Ensure job_id matches URL param
-          id: existingAssessment.id, // ✅ Use existing ID
-          created_at: existingAssessment.created_at, // ✅ Preserve created_at
+          id: existingAssessment.id, // Use existing ID
+          created_at: existingAssessment.created_at, // Preserve created_at
         };
         
         assessment = await dbUtils.updateAssessment(existingAssessment.id, updateData);
-        console.log('✅ Assessment updated in IndexedDB with job_id:', assessment?.job_id);
+        console.log('Assessment updated in IndexedDB with job_id:', assessment?.job_id);
       } else {
-        // ✅ CREATE: Generate new assessment
-        console.log('📝 Creating new assessment for job:', params.jobId);
+        // Generate new assessment
+        console.log('Creating new assessment for job:', params.jobId);
         
         const createData: Omit<Assessment, 'created_at' | 'updated_at'> = {
           id: assessmentData.id || `assessment-${params.jobId}-${Date.now()}`,
@@ -438,36 +436,36 @@ export const handlers = [
         };
         
         assessment = await dbUtils.createAssessment(createData);
-        console.log('✅ Assessment created in IndexedDB with job_id:', assessment?.job_id);
+        console.log('Assessment created in IndexedDB with job_id:', assessment?.job_id);
       }
       
       return HttpResponse.json({ success: true, data: assessment });
     } catch (error) {
-      console.error('❌ Assessment save error:', error);
+      console.error('Assessment save error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to save assessment' }, { status: 500 });
     }
   }),
 
 
 
-  // ✅ DELETE assessment - UPDATED for single assessment
+  // DELETE assessment
   http.delete('/api/assessments/:jobId', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
-    console.log('🔍 MSW: Intercepted DELETE /api/assessments/' + params.jobId);
+    console.log('MSW: Intercepted DELETE /api/assessments/' + params.jobId);
     
     try {
       const existingAssessment = await dbUtils.getAssessmentByJobId(params.jobId as string);
       
       if (existingAssessment) {
         await dbUtils.deleteAssessment(existingAssessment.id);
-        console.log('✅ Assessment deleted from IndexedDB');
+        console.log('Assessment deleted from IndexedDB');
       }
       
       return HttpResponse.json({ success: true, message: 'Assessment deleted' });
     } catch (error) {
-      console.error('❌ Assessment deletion error:', error);
+      console.error('Assessment deletion error:', error);
       return HttpResponse.json({ success: false, error: 'Failed to delete assessment' }, { status: 500 });
     }
   }),

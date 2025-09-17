@@ -12,9 +12,9 @@ import {
 interface JobsState {
   jobs: Job[];
   currentJob: Job | null;
-  loading: boolean;           // for list fetch
+  loading: boolean;           
   error: string | null;
-  detailLoading: boolean;     // for fetch by id
+  detailLoading: boolean;    
   detailError: string | null;
   filters: {
     search: string;
@@ -64,7 +64,7 @@ const jobsSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    /* ---------------- Fetch Jobs (list) ---------------- */
+    /* Fetch Jobs (list) */
     builder
       .addCase(fetchJobs.pending, (state) => {
         state.loading = true;
@@ -84,7 +84,7 @@ const jobsSlice = createSlice({
             totalJobs: payload.data.pagination?.total_items || 0,
             totalPages: payload.data.pagination?.total_pages || 0
           };
-          console.log('✅ Successfully processed jobs:', state.jobs.length);
+          console.log('Successfully processed jobs:', state.jobs.length);
         } else if (Array.isArray(payload)) {
           state.jobs = payload;
           state.pagination = {
@@ -93,7 +93,7 @@ const jobsSlice = createSlice({
             totalPages: Math.ceil(payload.length / state.pagination.itemsPerPage)
           };
         } else {
-          console.error('❌ Unexpected jobs payload structure:', action.payload);
+          console.error('Unexpected jobs payload structure:', action.payload);
           state.jobs = [];
           state.pagination = {
             ...state.pagination,
@@ -108,7 +108,7 @@ const jobsSlice = createSlice({
         state.jobs = [];
       });
 
-    /* ---------------- Fetch Single Job (detail) ---------------- */
+    /* Fetch Single Job (detail) */
     builder
       .addCase(fetchJobById.pending, (state) => {
         // Use detailLoading separate from list loading
@@ -134,7 +134,6 @@ const jobsSlice = createSlice({
         } else if (payload?.id) {
           job = payload;
         } else if (payload?.data && typeof payload.data === 'object') {
-          // last resort: payload.data
           job = payload.data as Job;
         } else {
           job = (payload as Job) || null;
@@ -148,7 +147,7 @@ const jobsSlice = createSlice({
         state.currentJob = null;
       });
 
-    /* ---------------- Create Job ---------------- */
+    /*  Create Job */
     builder
       .addCase(createJob.pending, (state) => {
         state.loading = true;
@@ -166,7 +165,7 @@ const jobsSlice = createSlice({
         state.error = (action.payload as string) || 'Failed to create job';
       });
 
-    /* ---------------- Update Job ---------------- */
+    /* Update Job */
     builder
       .addCase(updateJob.fulfilled, (state, action) => {
         const updatedJob = action.payload?.data;
@@ -184,7 +183,7 @@ const jobsSlice = createSlice({
         state.error = (action.payload as string) || 'Failed to update job';
       });
 
-    /* ---------------- Delete Job ---------------- */
+    /* Delete Job */
     builder
       .addCase(deleteJob.fulfilled, (state, action) => {
         const jobId = action.payload;
@@ -197,7 +196,7 @@ const jobsSlice = createSlice({
         state.error = (action.payload as string) || 'Failed to delete job';
       });
 
-    /* ---------------- Reorder Jobs ---------------- */
+    /* Reorder Jobs */
     builder
       .addCase(reorderJobs.fulfilled, (state, action) => {
         const newOrderIds: string[] = action.payload;
@@ -216,14 +215,14 @@ const jobsSlice = createSlice({
 
 export const { setFilters, setPagination, clearError } = jobsSlice.actions;
 
-/* ---------------- Selectors ---------------- */
+/* Selectors */
 export const selectJobs = (state: { jobs: JobsState }) => state.jobs.jobs;
 export const selectCurrentJob = (state: { jobs: JobsState }) => state.jobs.currentJob;
 export const selectJobsLoading = (state: { jobs: JobsState }) => state.jobs.loading;
 export const selectJobsError = (state: { jobs: JobsState }) => state.jobs.error;
 export const selectJobsFilters = (state: { jobs: JobsState }) => state.jobs.filters;
 export const selectJobsPagination = (state: { jobs: JobsState }) => state.jobs.pagination;
-// NEW: detail loading selectors
+// detail loading selectors
 export const selectJobDetailLoading = (state: { jobs: JobsState }) => state.jobs.detailLoading;
 export const selectJobDetailError = (state: { jobs: JobsState }) => state.jobs.detailError;
 
@@ -240,7 +239,6 @@ export const selectJobById = (state: { jobs: JobsState }, jobId: string): Job | 
   state.jobs.jobs?.find((job) => job.id === jobId) ||
   (state.jobs.currentJob?.id === jobId ? state.jobs.currentJob : undefined);
 
-/* Alias for backwards compatibility */
 export const addJob = createJob;
 
 export default jobsSlice.reducer;

@@ -4,16 +4,16 @@ import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { store } from './store';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import JobsPage from './pages/JobsPage';
-import JobDetailsPage from './pages/JobDetailsPage';
-import CandidatesPage from './pages/CandidatesPage';
-import DashboardPage from './pages/DashboardPage';
-import CandidateDetailsPage from './pages/CandidateDetailsPage';
-import AssessmentBuilderPage from './pages/AssessmentBuilderPage';
-import NotFound from './pages/NotFound';
+import { store } from '@/store';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import JobsPage from '@/pages/JobsPage';
+import JobDetailsPage from '@/pages/JobDetailsPage';
+import CandidatesPage from '@/pages/CandidatesPage';
+import DashboardPage from '@/pages/DashboardPage';
+import CandidateDetailsPage from '@/pages/CandidateDetailsPage';
+import AssessmentBuilderPage from '@/pages/AssessmentBuilderPage';
+import NotFound from '@/pages/NotFound';
 
 const queryClient = new QueryClient();
 
@@ -28,7 +28,6 @@ const App = () => (
             <Navigation />
             <main className="flex-1">
               <Routes>
-                {/* <Route path="/" element={<Navigate to="/jobs" replace />} /> */}
                 <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/jobs" element={<JobsPage />} />

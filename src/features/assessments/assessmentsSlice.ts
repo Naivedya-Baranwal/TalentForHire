@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-// ✅ CHANGED: Simplified interfaces for single assessment
 export interface Question {
   id: string;
   type: 'short_text' | 'long_text' | 'single_choice' | 'multiple_choice';
@@ -25,20 +24,19 @@ export interface Assessment {
   title: string;
   description?: string;
   sections: Section[];
-  // ✅ REMOVED: assessment_number field
   created_at: string;
   updated_at: string;
 }
 
 interface AssessmentsState {
-  currentAssessment: Assessment | null; // ✅ CHANGED: Single assessment
+  currentAssessment: Assessment | null; 
   loading: boolean;
   saving: boolean;
   error: string | null;
 }
 
 const initialState: AssessmentsState = {
-  currentAssessment: null, // ✅ CHANGED: Single assessment
+  currentAssessment: null,
   loading: false,
   saving: false,
   error: null,
@@ -48,12 +46,9 @@ const assessmentsSlice = createSlice({
   name: 'assessments',
   initialState,
   reducers: {
-    // ✅ CHANGED: Set current assessment (simplified)
     setCurrentAssessment: (state, action: PayloadAction<Assessment>) => {
       state.currentAssessment = action.payload;
     },
-
-    // ✅ REMOVED: setSelectedAssessmentNumber (no longer needed)
 
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
@@ -67,7 +62,6 @@ const assessmentsSlice = createSlice({
       state.error = action.payload;
     },
 
-    // ✅ CHANGED: Clear assessment (simplified)
     clearAssessment: (state) => {
       state.currentAssessment = null;
     },
@@ -168,7 +162,6 @@ export const {
   removeQuestion,
 } = assessmentsSlice.actions;
 
-// ✅ CHANGED: Updated selectors for single assessment
 export const selectCurrentAssessment = (state: any) => state.assessments.currentAssessment;
 export const selectAssessmentsLoading = (state: any) => state.assessments.loading;
 export const selectAssessmentsSaving = (state: any) => state.assessments.saving;

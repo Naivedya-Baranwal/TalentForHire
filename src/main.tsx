@@ -10,9 +10,9 @@ import { worker } from './mocks/browser';
 
 async function startApp() {
   try {
-    console.log('🔄 Starting MSW...');
+    console.log('Starting MSW...');
     await worker.start({
-      onUnhandledRequest: 'warn', // Log unhandled requests
+      onUnhandledRequest: 'warn', 
       serviceWorker: {
         url: '/mockServiceWorker.js'
       }
@@ -20,9 +20,9 @@ async function startApp() {
     console.log(' MSW started successfully');
 
     // 2. Initialize IndexedDB
-    console.log('🔄 Initializing database...');
+    console.log('Initializing database...');
     await dbUtils.initializeData();
-    console.log('✅ Database initialized');
+    console.log('Database initialized');
     
     // 3. Start React app
     const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
@@ -32,9 +32,9 @@ async function startApp() {
       </Provider>
     );
     
-    console.log('✅ App started successfully');
+    console.log('App started successfully');
   } catch (error) {
-    console.error('❌ Failed to start app:', error);
+    console.error('Failed to start app:', error);
   }
 }
 

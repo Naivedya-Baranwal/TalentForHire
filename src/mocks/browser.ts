@@ -1,7 +1,7 @@
 import { setupWorker } from 'msw/browser';
 import { handlers } from '@/mocks/handlers';
 
-// ✅ Setup the worker with your handlers
+// Setting up the worker with handlers
 export const worker = setupWorker(...handlers);
 
 export const startMockServer = async () => {

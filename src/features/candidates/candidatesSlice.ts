@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { createSelector } from '@reduxjs/toolkit'; // ✅ ADDED for memoization
+import { createSelector } from '@reduxjs/toolkit'; // ADDED for memoization
 import type { Candidate, CandidateNote } from '@/lib/database';
 import {
   fetchCandidates,
@@ -8,16 +8,16 @@ import {
   addCandidateNote,
   fetchCandidatesByStage,
   updateCandidateStage,
-  updateCandidateStageWithTimeline // ✅ Add this
+  updateCandidateStageWithTimeline 
 } from '@/features/candidates/candidatesThunks';
 
 interface CandidatesState {
   candidates: Candidate[];
   candidatesByStage: { [stage: string]: Candidate[] };
   currentCandidate: Candidate | null;
-  loading: boolean;               // for list fetch
+  loading: boolean;              
   error: string | null;
-  detailLoading: boolean;         // for fetch by id
+  detailLoading: boolean;        
   detailError: string | null;
   filters: {
     search: string;
@@ -84,7 +84,7 @@ const candidatesSlice = createSlice({
         const payload = action.payload as any;
         console.log('🔍 Candidates Redux - Received payload:', payload);
 
-        // ✅ Match MSW response structure
+        // Match MSW response structure
         if (payload?.success && payload?.data?.candidates) {
           state.candidates = payload.data.candidates;
           state.pagination = {
@@ -103,7 +103,7 @@ const candidatesSlice = createSlice({
           };
         } 
         else {
-          console.error('❌ Unexpected candidates payload structure:', payload);
+          console.error('Unexpected candidates payload structure:', payload);
           state.candidates = [];
           state.pagination = {
             ...state.pagination,
@@ -115,14 +115,14 @@ const candidatesSlice = createSlice({
       .addCase(fetchCandidates.rejected, (state, action) => {
         state.loading = false;
         state.error = (action.payload as string) || action.error.message || 'Failed to fetch candidates';
-        // ✅ ADDED: Reset data on error
+        // Reset data on error
         state.candidates = [];
       });
 
     // Fetch candidates by stage
     builder
       .addCase(fetchCandidatesByStage.fulfilled, (state, action) => {
-        // ✅ FIXED: Handle direct object response
+        //  Handle direct object response
         state.candidatesByStage = action.payload || {};
       });
 
@@ -131,7 +131,6 @@ const candidatesSlice = createSlice({
       .addCase(fetchCandidateById.pending, (state) => {
         state.detailLoading = true;
         state.detailError = null;
-        // optionally keep currentCandidate until new one arrives
       })
       .addCase(fetchCandidateById.fulfilled, (state, action) => {
         state.detailLoading = false;
@@ -166,7 +165,7 @@ const candidatesSlice = createSlice({
     // Update candidate
     builder
       .addCase(updateCandidate.fulfilled, (state, action) => {
-        // ✅ FIXED: Handle MSW response structure
+        // Handle MSW response structure
         const updatedCandidate = action.payload?.data || action.payload;
         if (updatedCandidate) {
           const candidateIndex = state.candidates.findIndex(c => c.id === updatedCandidate.id);
@@ -182,7 +181,7 @@ const candidatesSlice = createSlice({
     // Update candidate stage
     builder
       .addCase(updateCandidateStage.fulfilled, (state, action) => {
-        // ✅ FIXED: Handle MSW response structure
+        // Handle MSW response structure
         const updatedCandidate = action.payload?.data || action.payload;
         if (updatedCandidate) {
           // Update in candidates array
@@ -237,7 +236,7 @@ const candidatesSlice = createSlice({
     // Update candidate stage with timeline
     builder
       .addCase(updateCandidateStageWithTimeline.fulfilled, (state, action) => {
-        // ✅ Handle MSW response structure
+        // Handle MSW response structure
         const updatedCandidate = action.payload?.data || action.payload;
         if (updatedCandidate) {
           // Update in candidates array
@@ -266,18 +265,18 @@ const candidatesSlice = createSlice({
 
 export const { setFilters, setPagination, clearError } = candidatesSlice.actions;
 
-// ✅ FIXED: Memoized selectors to prevent rerenders
+// Memoized selectors to prevent rerenders
 export const selectCandidates = (state: { candidates: CandidatesState }) => state.candidates.candidates;
 export const selectCurrentCandidate = (state: { candidates: CandidatesState }) => state.candidates.currentCandidate;
 export const selectCandidatesLoading = (state: { candidates: CandidatesState }) => state.candidates.loading;
 export const selectCandidatesError = (state: { candidates: CandidatesState }) => state.candidates.error;
 export const selectCandidatesFilters = (state: { candidates: CandidatesState }) => state.candidates.filters;
 export const selectCandidatesPagination = (state: { candidates: CandidatesState }) => state.candidates.pagination;
-// NEW: detail loading selector
+// detail loading selector
 export const selectCandidateDetailLoading = (state: { candidates: CandidatesState }) => state.candidates.detailLoading;
 export const selectCandidateDetailError = (state: { candidates: CandidatesState }) => state.candidates.detailError;
 
-// ✅ FIXED: Use createSelector for memoization
+// Used createSelector for memoization
 export const selectPaginatedCandidates = createSelector(
   [selectCandidates, selectCandidatesPagination],
   (candidates, pagination) => ({
