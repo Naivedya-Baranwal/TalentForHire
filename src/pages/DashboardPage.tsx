@@ -24,17 +24,14 @@ import { fetchCandidates } from '@/features/candidates/candidatesThunks';
 import { 
   selectJobs, 
   selectJobsLoading, 
-  selectJobsError 
 } from '@/features/jobs/jobsSlice';
 import { 
   selectCandidates, 
   selectCandidatesLoading, 
-  selectCandidatesError 
 } from '@/features/candidates/candidatesSlice';
 import { 
   selectCurrentAssessment,
   selectAssessmentsLoading,
-  selectAssessmentsError 
 } from '@/features/assessments/assessmentsSlice';
 
 interface StatCardProps {
@@ -102,11 +99,9 @@ const DashboardPage: React.FC = () => {
   // Selectors
   const jobs = useSelector(selectJobs);
   const jobsLoading = useSelector(selectJobsLoading);
-  const jobsError = useSelector(selectJobsError);
 
   const candidates = useSelector(selectCandidates);
   const candidatesLoading = useSelector(selectCandidatesLoading);
-  const candidatesError = useSelector(selectCandidatesError);
 
   const currentAssessment = useSelector(selectCurrentAssessment);
   const assessmentsLoading = useSelector(selectAssessmentsLoading);
@@ -195,39 +190,39 @@ const DashboardPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Quick Stats - Top 4 boxes */}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <StatCard
-            title="Jobs"
-            value={totalJobsCount}
-            description="Total jobs"
-            icon={Briefcase}
-            loading={jobsLoading}
-            onClick={() => navigate('/jobs')}
-          />
-          <StatCard
-            title="Candidates"
-            value={totalCandidatesCount}
-            description="Total candidates"
-            icon={Users}
-            loading={candidatesLoading}
-            onClick={() => navigate('/candidates')}
-          />
-          <StatCard
-            title="Assessments"
-            value={assessmentCount}
-            description="Total assessments"
-            icon={FileText}
-            loading={assessmentsLoading}
-          />
-          <StatCard
-            title="Total Hired"
-            value={totalHiredCount}
-            description="Candidates hired"
-            icon={UserCheck}
-            loading={candidatesLoading}
-          />
-        </div>
+{/* Quick Stats - Top 4 boxes */}
+<div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 mb-8">
+  <StatCard
+    title="Jobs"
+    value={totalJobsCount}
+    description="Total jobs"
+    icon={Briefcase}
+    loading={jobsLoading}
+    onClick={() => navigate('/jobs')}
+  />
+  <StatCard
+    title="Candidates"
+    value={totalCandidatesCount}
+    description="Total candidates"
+    icon={Users}
+    loading={candidatesLoading}
+    onClick={() => navigate('/candidates')}
+  />
+  <StatCard
+    title="Assessments"
+    value={assessmentCount}
+    description="Total assessments"
+    icon={FileText}
+    loading={assessmentsLoading}
+  />
+  <StatCard
+    title="Total Hired"
+    value={totalHiredCount}
+    description="Candidates hired"
+    icon={UserCheck}
+    loading={candidatesLoading}
+  />
+</div>
 
         {/* Main Content Grid - Recent Candidates + Recent Jobs */}
         <div className="grid gap-6 lg:grid-cols-2 mb-8">

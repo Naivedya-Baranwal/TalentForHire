@@ -96,12 +96,9 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ jobId }) => {
       </div>
 
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="overflow-x-auto">
-          <div className="
-            grid gap-4
-            grid-flow-col auto-cols-[minmax(260px,1fr)] 
-            md:grid-flow-row md:auto-cols-auto md:grid md:grid-cols-6
-          ">
+        {/* Mobile: stack columns; Desktop: 6-column grid */}
+        <div className="overflow-visible md:overflow-x-auto">
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-6 md:gap-4">
             {stages.map((stage) => (
               <div key={stage.id} className="space-y-2">
                 <div className="flex items-center justify-between">

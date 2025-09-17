@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ArrowLeft,ArrowBigLeft, Users, FileText, MapPin, Calendar, Building2 } from 'lucide-react';
+import { ArrowLeft, ArrowBigLeft, Users, FileText, MapPin, Calendar, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -79,8 +79,6 @@ const JobDetailsPage = () => {
       <div className="container mx-auto px-4 py-6 lg:py-8">
         {/* Header / Hero */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
-        
-
           <div className="hidden sm:block h-6 w-px bg-border" />
 
           {/* Hero card with status stripe */}
@@ -91,11 +89,11 @@ const JobDetailsPage = () => {
             <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                 <Button variant="ghost" size="sm" asChild className="w-fit">
-            <Link to="/jobs">
-              <ArrowBigLeft className="h-8 w-8" />
-            </Link>
-          </Button>
+                  <Button variant="ghost" size="sm" asChild className="w-fit">
+                    <Link to="/jobs">
+                      <ArrowBigLeft className="h-8 w-8" />
+                    </Link>
+                  </Button>
                   <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground">
                     {job.title}
                   </h1>
@@ -151,73 +149,76 @@ const JobDetailsPage = () => {
           </TabsList>
 
           {/* Board */}
-          <TabsContent value="candidates" className="space-y-4 sm:space-y-6">
+          <TabsContent value="candidates" className="space-y-4  sm:space-y-6">
             <KanbanBoard jobId={job.id} />
           </TabsContent>
 
-          {/* Details */}
+          {/* Details: single column with responsive Job Information row */}
           <TabsContent value="details" className="space-y-4 sm:space-y-6">
-            <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
-              {/* Main: Description + Tags stacked */}
-              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-                <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">Description</CardTitle>
-                    <CardDescription className="text-muted-foreground">Role overview and responsibilities</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {job.description || 'No description provided.'}
-                    </p>
-                  </CardContent>
-                </Card>
+            {/* Job Information */}
+            <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-base sm:text-lg">Job Information</CardTitle>
+                <CardDescription className="text-muted-foreground">Key attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {/* Flex row that wraps responsively */}
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <div className="flex items-center gap-2 min-w-[160px] sm:min-w-[220px]">
+                    <div className="text-xs sm:text-sm font-medium text-muted-foreground">Type</div>
+                    <div className="text-sm sm:text-base text-foreground">{job.type}</div>
+                  </div>
+                  <div className="flex items-center gap-2 min-w-[160px] sm:min-w-[220px]">
+                    <div className="text-xs sm:text-sm font-medium text-muted-foreground">Department</div>
+                    <div className="text-sm sm:text-base text-foreground">{job.department}</div>
+                  </div>
+                  <div className="flex items-center gap-2 min-w-[160px] sm:min-w-[220px]">
+                    <div className="text-xs sm:text-sm font-medium text-muted-foreground">Location</div>
+                    <div className="text-sm sm:text-base text-foreground">{job.location}</div>
+                  </div>
+                  <div className="flex items-center gap-2 min-w-[160px] sm:min-w-[220px]">
+                    <div className="text-xs sm:text-sm font-medium text-muted-foreground">Created</div>
+                    <div className="text-sm sm:text-base text-foreground">
+                      {new Date(job.created_at).toLocaleDateString()}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-                {/* Tags moved here, directly below Description */}
-                <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">Tags</CardTitle>
-                    <CardDescription className="text-muted-foreground">Related skills and keywords</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      {job.tags.map((tag: string) => (
-                        <Badge key={tag} variant="outline" className="text-xs rounded-full bg-muted/40 text-foreground border-border">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+            {/* Description */}
+            <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-base sm:text-lg">Description</CardTitle>
+                <CardDescription className="text-muted-foreground">Role overview and responsibilities</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {job.description || 'No description provided.'}
+                </p>
+              </CardContent>
+            </Card>
 
-              {/* Sidebar: Job Information only */}
-              <div className="space-y-4 sm:space-y-6">
-                <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">Job Information</CardTitle>
-                    <CardDescription className="text-muted-foreground">Key attributes</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-3 sm:space-y-4">
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium text-muted-foreground">Type</div>
-                      <div className="text-sm sm:text-base text-foreground">{job.type}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium text-muted-foreground">Department</div>
-                      <div className="text-sm sm:text-base text-foreground">{job.department}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium text-muted-foreground">Location</div>
-                      <div className="text-sm sm:text-base text-foreground">{job.location}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm font-medium text-muted-foreground">Created</div>
-                      <div className="text-sm sm:text-base text-foreground">{new Date(job.created_at).toLocaleDateString()}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            {/* Tags */}
+            <Card className="bg-card/90 border border-border rounded-2xl shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-base sm:text-lg">Tags</CardTitle>
+                <CardDescription className="text-muted-foreground">Related skills and keywords</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {job.tags.map((tag: string) => (
+                    <Badge
+                      key={tag}
+                      variant="outline"
+                      className="text-xs rounded-full bg-muted/40 text-foreground border-border"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
       </div>

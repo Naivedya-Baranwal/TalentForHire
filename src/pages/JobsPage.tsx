@@ -480,7 +480,7 @@ const JobsPage = () => {
                               <div className="absolute bottom-6 right-6">
                                 <Link to={`/jobs/${job.id}`} aria-label="View job">
                                   <Button 
-                                    className="bg-gradient-primary text-primary-foreground shadow-md hover:shadow-lg transition-all
+                                    className="bg-emerald-400 text-primary-foreground shadow-md hover:shadow-lg transition-all
                                                h-10 w-10 p-0 grid place-items-center rounded-full
                                                sm:h-10 sm:w-auto sm:px-4 sm:rounded-xl sm:flex sm:items-center sm:justify-center"
                                   >
