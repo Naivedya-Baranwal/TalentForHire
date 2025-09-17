@@ -20,7 +20,7 @@
 - [Tech Stack](#-tech-stack)
 - [Setup](#-setup)
 - [Project Structure](#-project-structure)
-- [API Simulation Details](#-api-simulation)
+- [API Simulation Details](#-api-simulation-details)
 - [Data Management](#-data-management)
 - [Available Scripts](#-available-scripts)
 - [License](#-license)
