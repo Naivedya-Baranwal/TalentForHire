@@ -37,7 +37,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-card/95 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-background/80 backdrop-blur-xl backdrop-saturate-150 border-b border-border/50 sticky top-0 z-50 shadow-sm supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
