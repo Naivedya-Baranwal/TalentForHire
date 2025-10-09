@@ -2,12 +2,19 @@ import { http, HttpResponse } from 'msw';
 import { db, dbUtils, Candidate } from '../lib/database';
 import { Assessment } from '../lib/database';
 
+  function shouldSimulateError(errorRate = 0.05) {
+    return Math.random() < errorRate; 
+  }
 export const handlers = [
-
   http.patch('/api/jobs/reorder', async ({ request }) => {
     // artificial latency : 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
-
+    if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to fetch data' },
+        { status: 500 }
+      );
+    }
     console.log('MSW: Intercepted PATCH /api/jobs/reorder');
     try {
       const { jobIds } = await request.json() as { jobIds: string[] };
@@ -36,7 +43,12 @@ export const handlers = [
   http.get('/api/jobs', async ({ request }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
-
+    if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to fetch data' },
+        { status: 500 }
+      );
+    }
     console.log('MSW: Intercepted GET /api/jobs');
     
     const url = new URL(request.url);
@@ -102,11 +114,16 @@ export const handlers = [
     }
   }),
 
-  // CREATE job - FIXED
+  // CREATE job
   http.post('/api/jobs', async ({ request }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
-
+     if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to fetch data' },
+        { status: 500 }
+      );
+    }
     console.log('MSW: Intercepted POST /api/jobs');
     
     try {
@@ -131,7 +148,12 @@ export const handlers = [
   http.patch('/api/jobs/:id', async ({ request, params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
-
+  if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to fetch data' },
+        { status: 500 }
+      );
+    }
     console.log('🔍 MSW: Intercepted PATCH /api/jobs/' + params.id);
     
     try {
@@ -157,7 +179,12 @@ export const handlers = [
   http.delete('/api/jobs/:id', async ({ params }) => {
     // artificial latency: 200 - 1200 ms
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
-
+ if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to delete data' },
+        { status: 500 }
+      );
+    }
     console.log('🔍 MSW: Intercepted DELETE /api/jobs/' + params.id);
     
     try {
@@ -179,7 +206,12 @@ export const handlers = [
     await new Promise(res => setTimeout(res, Math.floor(Math.random() * 1000) + 200));
 
     console.log('MSW: Intercepted GET /api/candidates');
-    
+     if (shouldSimulateError()) {
+      return HttpResponse.json(
+        { success: false, error: 'Failed to fetch data' },
+        { status: 500 }
+      );
+    }
     const url = new URL(request.url);
     const search = url.searchParams.get('search') ?? '';
     const stage = url.searchParams.get('stage') ?? 'all';

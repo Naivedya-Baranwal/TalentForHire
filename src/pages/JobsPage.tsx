@@ -230,6 +230,7 @@ const JobsPage = () => {
                   <SelectItem value="active">Active</SelectItem>
                   <SelectItem value="draft">Draft</SelectItem>
                   <SelectItem value="archived">Archived</SelectItem>
+                  <SelectItem value="recent">Recently added</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -256,6 +257,7 @@ const JobsPage = () => {
                       <Input
                         id="title"
                         value={formData.title}
+                        required
                         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                         placeholder="e.g. Senior Frontend Developer"
                         className="border-2 border-border rounded-lg focus:border-ring bg-background text-foreground"
@@ -267,6 +269,7 @@ const JobsPage = () => {
                       <Textarea
                         id="description"
                         value={formData.description}
+                        required
                         onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                         placeholder="Job description..."
                         rows={3}
@@ -280,6 +283,7 @@ const JobsPage = () => {
                         <Input
                           id="location"
                           value={formData.location}
+                          required
                           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                           placeholder="e.g. San Francisco, CA"
                           className="border-2 border-border rounded-lg focus:border-ring bg-background text-foreground"
@@ -308,6 +312,7 @@ const JobsPage = () => {
                         <Input
                           id="department"
                           value={formData.department}
+                          required
                           onChange={(e) => setFormData({ ...formData, department: e.target.value })}
                           placeholder="e.g. Engineering"
                           className="border-2 border-border rounded-lg focus:border-ring bg-background text-foreground"
@@ -334,6 +339,7 @@ const JobsPage = () => {
                       <Input
                         id="tags"
                         value={formData.tags}
+                        required
                         onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
                         placeholder="e.g. React, TypeScript, Remote (comma separated)"
                         className="border-2 border-border rounded-lg focus:border-ring bg-background text-foreground"
@@ -475,7 +481,7 @@ const JobsPage = () => {
                                 </div>
                               </div>
 
-                              {/* Bottom-right View: icon-only on mobile, labeled on sm+ */}
+                              {/* Bottom-right View*/}
                               <div className="absolute bottom-6 right-6">
                                 <Link to={`/jobs/${job.id}`} aria-label="View job">
                                   <Button 

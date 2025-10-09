@@ -360,11 +360,13 @@ async updateCandidateStageWithTimeline(
         job.description.toLowerCase().includes(filters.search!.toLowerCase())
       );
     }
-
+    if(filters.status && filters.status === 'recent'){
+      return (await query.sortBy('order')).reverse();
+    }
     if (filters.status && filters.status !== 'all') {
       query = query.filter(job => job.status === filters.status);
     }
-
+     
     if (filters.department) {
       query = query.filter(job => job.department === filters.department);
     }

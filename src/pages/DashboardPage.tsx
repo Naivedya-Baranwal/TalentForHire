@@ -110,10 +110,14 @@ const DashboardPage: React.FC = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       // Fetch data for display
-      await Promise.all([
-        dispatch(fetchJobs({ page: 1, pageSize: 10 })),
-        dispatch(fetchCandidates({ page: 1, pageSize: 10 }))
-      ]);
+      // await Promise.all([
+      //   dispatch(fetchJobs({ page: 1, pageSize: 50 })),
+      //   dispatch(fetchCandidates({ page: 1, pageSize: 50 }))
+      // ]);
+await Promise.all([
+  dispatch(fetchJobs({ page: 1, pageSize: Number.MAX_SAFE_INTEGER })),
+  dispatch(fetchCandidates({ page: 1, pageSize: Number.MAX_SAFE_INTEGER }))
+]);
 
       // Get total counts from database
       try {
@@ -164,7 +168,7 @@ const DashboardPage: React.FC = () => {
   }, [jobs, candidates, currentAssessment]);
 
   // Calculate statistics using total counts
-  const activeJobs = jobs.filter(job => job.status === 'active').length;
+  // const activeJobs = jobs.filter(job => job.status === 'active').length;
 
   const recentJobs = [...jobs]
     .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
@@ -349,7 +353,7 @@ const DashboardPage: React.FC = () => {
         <div className="mt-8">
           <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
           <div className="flex flex-wrap gap-3">
-            <Button onClick={() => navigate('/jobs')} className="gap-2 bg-[#28d768] text-black">
+            <Button variant='outline' onClick={() => navigate('/jobs')} className="gap-2 bg-[#28d768] text-black">
               <Briefcase className="h-4 w-4" />
               Post New Job
             </Button>

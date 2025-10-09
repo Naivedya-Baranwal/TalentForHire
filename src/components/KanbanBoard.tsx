@@ -44,35 +44,49 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ jobId }) => {
     return null;
   };
 
-  const handleDragEnd = (result: any) => {
-    const { destination, source, draggableId } = result;
-    if (!destination) return;
-    if (destination.droppableId === source.droppableId && destination.index === source.index) return;
+const handleDragEnd = (result: any) => {
+  const { destination, source, draggableId } = result;
+  if (!destination) return;
+  if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
-    const candidate = findCandidateById(draggableId);
-    if (!candidate) return;
+  // Find stage positions
+  const stageOrder = stages.map(s => s.id);
+  const sourceIndex = stageOrder.indexOf(source.droppableId);
+  const destIndex = stageOrder.indexOf(destination.droppableId); 
 
-    const previousStage = source.droppableId;
-    const newStage = destination.droppableId;
-    const previousStageTitle = getStageTitle(previousStage);
-    const newStageTitle = getStageTitle(newStage);
-
-    dispatch(updateCandidateStageWithTimeline({
-      candidateId: draggableId,
-      candidateName: candidate.name,
-      previousStage,
-      newStage,
-      previousStageTitle,
-      newStageTitle
-    }));
-
+  // Prevent moving backward
+  if (destIndex < sourceIndex) {
     toast({
-      title: "Candidate moved",
-      description: `${candidate.name} moved from ${previousStageTitle} to ${newStageTitle}`
+      title: "Not allowed",
+      description: "Candidates can only be moved forward in the pipeline."
     });
-  };
+    return;
+  }
+ // if(destination.droppableId<source.droppableId)return;
+  const candidate = findCandidateById(draggableId);
+  if (!candidate) return;
 
-  const getInitials = (name: string) => name.split(' ').map(n => n).join('').toUpperCase();
+  const previousStage = source.droppableId;
+  const newStage = destination.droppableId;
+  const previousStageTitle = getStageTitle(previousStage);
+  const newStageTitle = getStageTitle(newStage);
+
+  dispatch(updateCandidateStageWithTimeline({
+    candidateId: draggableId,
+    candidateName: candidate.name,
+    previousStage,
+    newStage,
+    previousStageTitle,
+    newStageTitle
+  }));
+
+  toast({
+    title: "Candidate moved",
+    description: `${candidate.name} moved from ${previousStageTitle} to ${newStageTitle}`
+  });
+};
+
+const getInitials = (name: string) => name.split(' ').map(n => n).join('').toUpperCase();
 
   const getStageBadgeClass = (stageId: string) => {
     switch (stageId) {

@@ -11,7 +11,7 @@ import { fetchJobById } from '@/features/jobs/jobsThunks';
 import { RootState, AppDispatch } from '@/store';
 import KanbanBoard from '@/components/KanbanBoard';
 import { cn } from '@/lib/utils';
-
+ 
 const JobDetailsPage = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const dispatch = useDispatch<AppDispatch>();
